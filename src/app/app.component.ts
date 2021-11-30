@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
+import * as Aos from 'aos';
+// import PureCounter from '@srexi/purecounterjs';
+declare const Waypoint: any;
+// const pure = new PureCounter;
 // import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
 
 @Component({
@@ -55,6 +59,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    Aos.init({
+      useClassNames: true
+    })
     /**
    * Easy selector helper function
    */
@@ -221,18 +228,19 @@ export class AppComponent implements OnInit {
     /**
      * Skills animation
      */
-    // let skilsContent = select('.skills-content');
-    // if (skilsContent) {
-    //   new Waypoint({
-    //     element: skilsContent,
-    //     offset: '80%',
-    //     handler: function (direction) {
-    //       let progress = select('.progress .progress-bar', true);
-    //       progress.forEach((el) => {
-    //         el.style.width = el.getAttribute('aria-valuenow') + '%'
-    //       });
-    //     }
-    //   })
-    // }
+    let skilsContent = select('.skills-content');
+    if (skilsContent) {
+      const wp = new Waypoint({
+        element: skilsContent,
+        offset: '80%',
+        handler: function (direction) {
+          let progress = select('.progress .progress-bar', true);
+          progress.forEach((el) => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%'
+          });
+        }
+      })
+      return wp;
+    }
   }
 }

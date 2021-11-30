@@ -28,9 +28,13 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/aos/dist/aos.css",
               "src/styles/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/aos/dist/aos.js",
+              "node_modules/waypoints/lib/noframework.waypoints.js"
+            ]
           },
           "configurations": {
             "production": {
