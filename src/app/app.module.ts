@@ -7,7 +7,6 @@ import { AlertModule } from 'ngx-bootstrap/alert';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CountUpModule } from 'ngx-countup';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-// import { CookieService } from 'ngx-cookie-service';
 import { environment } from 'src/environments/environment';
 
 // import { AppRoutingModule } from './app-routing.module';

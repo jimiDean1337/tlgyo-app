@@ -5,7 +5,6 @@ import { NgForm } from '@angular/forms';
 import * as Aos from 'aos';
 import {CountUp, CountUpOptions} from 'countup.js';
 import { ModalDirective } from 'ngx-bootstrap/modal';
-// import { CookieService } from 'ngx-cookie-service';
 declare const Waypoint: any;
 // import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
 
