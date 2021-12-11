@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireAnalytics } from '@angular/fire/analytics';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
+import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import * as Aos from 'aos';
 import {CountUp, CountUpOptions} from 'countup.js';
@@ -33,7 +34,7 @@ export class AppComponent implements OnInit {
   subscriberModel: any = {};
   contactModel: any = {};
   constructor(private afs: AngularFirestore, analytics: AngularFireAnalytics) {
-    analytics.logEvent('custom_event', );
+    analytics.logEvent('Splash', new Date());
   }
 
   showNewsletterModal(): void {
@@ -48,7 +49,7 @@ export class AppComponent implements OnInit {
     this.isNewsletterModalShown = false;
   }
 
-  async addSubscriber(data: any, form?: NgForm) {
+  addSubscriber(data: any, form?: NgForm) {
     const { name, email } = data;
     // console.log("Subscriber Form: ", form)
     const subscriber = {
@@ -59,12 +60,12 @@ export class AppComponent implements OnInit {
     this.alertConfig.type = 'success';
     this.alertConfig.msg = 'Oh Yeah! You\'re officially signed up to updates!';
     this.alertConfig.show = true;
-    await this.afs.collection('subscribers').add(subscriber)
+    this.afs.collection('subscribers').add(subscriber)
     this.subscriberModel = {};
     form.resetForm();
   }
 
-  async addContact(data: any, form?: NgForm) {
+  addContact(data: any, form?: NgForm) {
     const { name, email, subject, msg } = data;
     const contact = {
       timestamp: new Date(),
@@ -73,7 +74,7 @@ export class AppComponent implements OnInit {
     this.alertConfig.type = 'success';
     this.alertConfig.msg = 'OK! Your message has been sent!';
     this.alertConfig.show = true;
-    await this.afs.collection('contacts').add(contact)
+    this.afs.collection('contacts').add(contact)
     this.contactModel = {};
     form.resetForm();
   }
