@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAnalytics } from '@angular/fire/analytics';
 import { NgForm } from '@angular/forms';
 import * as Aos from 'aos';
-// import PureCounter from '@srexi/purecounterjs';
+import {CountUp, CountUpOptions} from 'countup.js';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+// import { CookieService } from 'ngx-cookie-service';
 declare const Waypoint: any;
-// const pure = new PureCounter;
 // import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
 
 @Component({
@@ -13,23 +15,47 @@ declare const Waypoint: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  @ViewChild('autoNewsletterModal', { static: false }) autoNewsletterModal?: ModalDirective;
+  isNewsletterModalShown;
+
   title = 'tlgyo-app';
   alertConfig = {
     type: 'success',
     msg: '',
-    show: false
+    show: false,
+    timeout: 5
+  }
+
+  countsOptions: CountUpOptions = {
+    duration: 10,
+    startVal: 0,
   }
 
   subscriberModel: any = {};
   contactModel: any = {};
-  constructor(private afs: AngularFirestore) { }
+  constructor(private afs: AngularFirestore, analytics: AngularFireAnalytics) {
+    analytics.logEvent('custom_event', );
+  }
+
+  showNewsletterModal(): void {
+    this.isNewsletterModalShown = true;
+  }
+
+  hideNewsletterModal(): void {
+    this.autoNewsletterModal?.hide();
+  }
+
+  onNewsletterModalHidden(): void {
+    this.isNewsletterModalShown = false;
+  }
 
   async addSubscriber(data: any, form?: NgForm) {
     const { name, email } = data;
-    console.log("Subscriber Form: ", form)
+    // console.log("Subscriber Form: ", form)
     const subscriber = {
       timestamp: new Date(),
-      name, email
+      name: name.toUpperCase(),
+      email
     }
     this.alertConfig.type = 'success';
     this.alertConfig.msg = 'Oh Yeah! You\'re officially signed up to updates!';
@@ -58,10 +84,19 @@ export class AppComponent implements OnInit {
     this.alertConfig.msg = '';
   }
 
+  countStarted(e: any) {
+    console.log('Counting Started', e)
+  }
+
   ngOnInit() {
     Aos.init({
       useClassNames: true
     })
+
+    setTimeout(() => {
+      this.isNewsletterModalShown = true;
+    }, 5000)
+    this.isNewsletterModalShown = false;
     /**
    * Easy selector helper function
    */
@@ -77,11 +112,11 @@ export class AppComponent implements OnInit {
     /**
      * Easy event listener function
      */
-    const on = (type, el, listener, all = false) => {
+    const on = (type: any, el: any, listener: any, all = false) => {
       let selectEl = select(el, all)
       if (selectEl) {
         if (all) {
-          selectEl.forEach(e => e.addEventListener(type, listener))
+          selectEl.forEach((e: any) => e.addEventListener(type, listener))
         } else {
           selectEl.addEventListener(type, listener)
         }

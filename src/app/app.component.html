@@ -9,13 +9,13 @@
 
         <!-- Slide 1 -->
         <div class="carousel-item active">
-          <div class="carousel-background"><img src="assets/img/slide/slide-1.jpg" alt=""></div>
+          <div class="carousel-background"><img src="assets/img/slide/4-teens-sunset.jpg" alt=""></div>
           <div class="carousel-container">
             <div class="carousel-content">
               <h2 class="" data-aos="fade-down">Welcome to <span>TLGYO.ORG</span></h2>
               <p class="" data-aos="fade-up">Our Mission is to enrich the futures of our youth by providing a safe and nurturing environment for them to grow and
               develop</p>
-              <a href="#donation" class="btn-get-started scrollto" data-aos="fade-up">Donate</a>
+              <a href="#donation" class="btn-get-started scrollto" data-aos="fade-up">DONATE NOW</a>
             </div>
           </div>
         </div>
@@ -39,8 +39,8 @@
           <div class="carousel-background"><img src="assets/img/slide/slide-3.jpg" alt=""></div>
           <div class="carousel-container">
             <div class="carousel-content">
-              <h2 class="animate__animated animate__fadeInDown">Sequi ea ut et est quaerat</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
+              <h2 class="" data-aos="fade-down">Sequi ea ut et est quaerat</h2>
+              <p class="" data-aos="fade-down">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
                 ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
                 Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
               <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
@@ -77,8 +77,8 @@
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About Us</a></li>
         <li><a class="nav-link scrollto" href="#services">Services</a></li>
-        <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
         <li><a class="nav-link scrollto" href="#team">Team</a></li>
+        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="#">Drop Down 1</a></li>
@@ -96,7 +96,7 @@
             <li><a href="#">Drop Down 4</a></li>
           </ul>
         </li> -->
-        <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        <li><a class="nav-link getstarted scrollto" href="#donation">Donate</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
@@ -112,9 +112,10 @@
 
       <div class="section-title">
         <h2>About Us</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
+        <p>TLGYO was founded to help give at risk youth their best chance. Our main goal is to help teens in need have the most
+        successful future possible. We work to accomplish this by providing them with opportunities to build skills to help them
+        maintain healthy lifestyles, while also providing them with the tools they need to become productive, successful members
+        of society.</p>
       </div>
 
       <div class="row">
@@ -122,7 +123,8 @@
           <img src="assets/img/about.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 content">
-          <h3>Voluptatem dignissimos <strong>provident quasi corporis voluptates</strong></h3>
+          <h3>TLGYO.ORG <strong>wants to be able to enrich the futures of our youth by providing a safe and nurturing environment for
+          them to grow and develop.</strong></h3>
           <p class="fst-italic">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore
@@ -184,8 +186,8 @@
         <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
           <div class="count-box">
             <i class="bi bi-emoji-smile"></i>
-            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1"
-              class="purecounter"></span>
+            <span [countUp]="345" [options]="countsOptions"
+              class="purecounter">0</span>
             <p><strong>Donations</strong> from people like you</p>
             <a href="#">Find out more &raquo;</a>
           </div>
@@ -194,7 +196,7 @@
         <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
           <div class="count-box">
             <i class="bi bi-journal-richtext"></i>
-            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1"
+            <span [countUp]="8" (complete)="countStarted($event)" [options]="countsOptions"
               class="purecounter"></span>
             <p><strong>Local Partners</strong> working with us to proide our services</p>
             <a href="#">Find out more &raquo;</a>
@@ -203,10 +205,10 @@
 
         <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
           <div class="count-box">
-            <i class="bi bi-headset"></i>
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1"
+            <i class="bi bi-emoji-smile"></i>
+            <span [countUp]="500" [options]="countsOptions"
               class="purecounter"></span>
-            <p><strong>Hours Of Support</strong> aut commodi quaerat. Aliquam ratione</p>
+            <p><strong>Children Helped</strong> aut commodi quaerat. Aliquam ratione</p>
             <a href="#">Find out more &raquo;</a>
           </div>
         </div>
@@ -214,7 +216,7 @@
         <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
           <div class="count-box">
             <i class="bi bi-people"></i>
-            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+            <span [countUp]="3" [options]="{duration: 15}"
               class="purecounter"></span>
             <p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
             <a href="#">Find out more &raquo;</a>
@@ -642,11 +644,23 @@
 
         <div class="col-lg-4 col-md-6 footer-newsletter">
           <h4>Our Newsletter</h4>
-          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-          <form action="" method="post">
-            <input type="email" name="email"><input type="submit" value="Subscribe">
+          <p>Subscribe to get the TLGYO.ORG monthly newsletter. Receive organization updates, upcomging events, and other relavent information.</p>
+          <form #subscribeForm="ngForm">
+            <div class="form-group">
+              <input [(ngModel)]="subscriberModel.name" #subName="ngModel" type="text" class="form-control" name="subName"
+                id="subName" aria-describedby="subName" placeholder="Name">
+            </div>
+            <div class="form-group mt-1">
+              <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email"
+                placeholder="Email">
+            </div>
+            <button type="button" class="btn btn-get-started float-end mt-2"
+              (click)="addSubscriber(subscriberModel, subscribeForm)">SUBSCRIBE</button>
           </form>
-
+          <!-- <form #subscribeForm="ngForm">
+            <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" name="email">
+            <button type="button" (click)="addSubscriber(subscriberModel, subscribeForm)">Subscribe</button>
+          </form> -->
         </div>
 
       </div>
@@ -666,3 +680,32 @@
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
     class="bi bi-arrow-up-short"></i></a>
+
+<!-- Newsletter Popup Modal -->
+<div id="autoNewsletterModal" *ngIf="isNewsletterModalShown" [config]="{ show: isNewsletterModalShown }" (onHidden)="onNewsletterModalHidden()" bsModal #autoNewsletterModal="bs-modal"
+  class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-auto-newsletter">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-auto-newsletter" class="modal-title pull-left">TLGYO Newsletter</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hideNewsletterModal()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Subscribe to get updates on TLGYO news, upcoming events, fundraisers, volunteer oportunities, and much more. Direct to your inbox, once a month. 100% Spam-free.
+        <form #subscribeForm="ngForm">
+          <div class="form-group">
+            <input [(ngModel)]="subscriberModel.name" #subName="ngModel" type="text" class="form-control" name="subName" id="subName" aria-describedby="subName" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email" placeholder="Email">
+          </div>
+          <button type="button" class="btn btn-get-started float-end mt-2" (click)="addSubscriber(subscriberModel, subscribeForm); hideNewsletterModal();">SUBSCRIBE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<alert [isOpen]="alertConfig.show" [dismissOnTimeout]="alertConfig.timeout" [type]="alertConfig.type" [dismissible]="true">{{ alertConfig.msg }}</alert>

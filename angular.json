@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/boxicons/css/boxicons.min.css",
               "node_modules/aos/dist/aos.css",
               "src/styles/styles.scss"
             ],
