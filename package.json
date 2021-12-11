@@ -27,7 +27,6 @@
     "firebase": "^7.0 || ^8.0",
     "ngx-bootstrap": "^7.1.0",
     "ngx-countup": "^7.3.3",
-    "ngx-owl-carousel-o": "^7.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "waypoints": "^4.0.1",

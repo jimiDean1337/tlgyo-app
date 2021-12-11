@@ -6,7 +6,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { CountUpModule } from 'ngx-countup';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 import { environment } from 'src/environments/environment';
 
 // import { AppRoutingModule } from './app-routing.module';
@@ -30,7 +29,6 @@ import { RouterModule } from '@angular/router';
     AlertModule.forRoot(),
     ModalModule.forRoot(),
     CountUpModule,
-    CarouselModule,
     // AppRoutingModule
   ],
   providers: [
