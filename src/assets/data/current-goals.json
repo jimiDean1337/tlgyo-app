@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Goal 1",
+    "value": 50,
+    "target": 100,
+    "unit": "%"
+  },
+  {
+    "title": "Goal 2",
+    "value": 60,
+    "target": 100,
+    "unit": "pcs"
+  },
+  {
+    "title": "Goal 3",
+    "value": 70,
+    "target": 100,
+    "unit": "$"
+  },
+  {
+    "title": "Goal 4",
+    "value": 80,
+    "target": 100,
+    "unit": "%"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "src": "4-teens-sunset.jpg",
+    "alt": "Youth watching the sunset",
+    "title": "Welcome to TLGYO",
+    "subtitle": "Enriching the futures of our youth by providing a safe and nurturing environment for them to grow and develop",
+    "button": {
+      "link": "#donation",
+      "text": "Donate now"
+    }
+  },
+  {
+    "src": "teens-facing-shore.jpg",
+    "alt": "Youth on the beach",
+    "title": "Providing Opportunities to Grow",
+    "subtitle": "Through The Looking Glass Youth Outreach provides the tools and the environment at-risk youth require to succeed in the world",
+    "button": {
+      "link": "#programs",
+      "text": "Learn more"
+    }
+  }
+]

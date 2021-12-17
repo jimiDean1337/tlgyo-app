@@ -1,0 +1,13 @@
+[
+  {
+    "show": true,
+    "title": "A Gift Of Hope",
+    "details": "A small gift of a donation can make a big difference in the life of a teenager in need.",
+    "button": {
+      "link": "donate-today",
+      "text": "Donate today",
+      "classes": ""
+    },
+    "background": "assets/img/cta-bg.jpg"
+  }
+]

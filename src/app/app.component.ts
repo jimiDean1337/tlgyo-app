@@ -1,22 +1,34 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
-import { Observable } from 'rxjs';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import * as Aos from 'aos';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
+import { ModalDirective, BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import {CountUp, CountUpOptions} from 'countup.js';
-import { ModalDirective } from 'ngx-bootstrap/modal';
+import { CarouselConfig } from 'ngx-bootstrap/carousel';
+import * as Aos from 'aos';
+import { Program } from './interfaces/program';
 declare const Waypoint: any;
 // import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
 
 @Component({
   selector: 'tlgyo-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers: [
+    { provide: CarouselConfig, useValue: {  interval: 100000, showIndicators: true,  pauseOnFocus: true} }
+  ]
 })
 export class AppComponent implements OnInit {
   @ViewChild('autoNewsletterModal', { static: false }) autoNewsletterModal?: ModalDirective;
-  isNewsletterModalShown;
+  @ViewChild('programModal', { static: false }) programModal?: ModalDirective;
+  modalRef?: BsModalRef;
+
+  showLoader: boolean = true;
+  selectedProgram: Program = {};
+  isNewsletterModalShown = false;
 
   title = 'tlgyo-app';
   alertConfig = {
@@ -33,7 +45,22 @@ export class AppComponent implements OnInit {
 
   subscriberModel: any = {};
   contactModel: any = {};
-  constructor(private afs: AngularFirestore, analytics: AngularFireAnalytics) {
+  programList: any;
+  faqList: any;
+  heroSlides: any;
+  currentCounts: any;
+  currentGoals: any;
+  callToAction: any;
+  stories: any;
+  selectedStory: any;
+  selectedFAQId: number = 0;
+
+  constructor(
+    private modalService: BsModalService,
+    private db: AngularFireDatabase,
+    private afs: AngularFirestore,
+    private analytics: AngularFireAnalytics
+  ) {
     analytics.logEvent('Splash', new Date());
   }
 
@@ -47,6 +74,20 @@ export class AppComponent implements OnInit {
 
   onNewsletterModalHidden(): void {
     this.isNewsletterModalShown = false;
+  }
+
+  openProgramModal(template: TemplateRef<any>, selectedProgram: number = 0, modalOpts: ModalOptions = {class: 'modal-xl'}) {
+    this.selectedProgram = this.programList[selectedProgram];
+    this.modalRef = this.modalService.show(template, modalOpts);
+  }
+
+  openStoryModal(template: TemplateRef<any>, selectedStory: number = 0, modalOpts: ModalOptions = { class: 'modal-xl' }) {
+    this.selectedStory = this.stories[selectedStory];
+    this.modalRef = this.modalService.show(template, modalOpts);
+  }
+
+  openSelectedFAQ(id: number) {
+    this.selectedFAQId = id;
   }
 
   addSubscriber(data: any, form?: NgForm) {
@@ -84,19 +125,103 @@ export class AppComponent implements OnInit {
     this.alertConfig.msg = '';
   }
 
-  countStarted(e: any) {
-    console.log('Counting Started', e)
+  private get Programs() {
+    return this.db.list<Program>('programs')
+  }
+
+  private get FAQ() {
+    return this.db.list<Program>('faq-list')
+  }
+
+  private get HeroSlides() {
+    return this.db.list('hero-slides')
+  }
+
+  private get CurrentCounts() {
+    return this.db.list('current-counts');
+  }
+
+  private get CurrentGoals() {
+    return this.db.list('current-goals');
+  }
+
+  private get CallToAction() {
+    return this.db.object('call-to-action');
+  }
+
+  private get Stories() {
+    return this.db.list('stories');
   }
 
   ngOnInit() {
     Aos.init({
       useClassNames: true
     })
-
+    // TODO: Remove newsletter display comment before deploy
     setTimeout(() => {
       this.isNewsletterModalShown = true;
     }, 5000)
-    this.isNewsletterModalShown = false;
+
+    setTimeout(() => {
+      this.showLoader = false;
+    }, 3000)
+
+    /**
+   * Programs Database
+   */
+    this.Programs.valueChanges().subscribe(programs => {
+      this.programList = programs;
+      console.log("GET Programs SUCCESS", programs)
+    })
+
+    /**
+  * FAQ Database
+  */
+    this.FAQ.valueChanges().subscribe(faq => {
+      this.faqList = faq;
+      console.log("GET FAQs SUCCESS", faq)
+    })
+
+    /**
+   * Hero Slides Database
+   */
+    this.HeroSlides.valueChanges().subscribe(slides => {
+      this.heroSlides = slides;
+      console.log("GET Slides SUCCESS", slides)
+    })
+
+    /**
+   * Current Counts Database
+   */
+    this.CurrentCounts.valueChanges().subscribe(counts => {
+      this.currentCounts = counts;
+      console.log("GET Counts SUCCESS", counts)
+    })
+
+    /**
+  * Current Goals Database
+  */
+    this.CurrentGoals.valueChanges().subscribe(goals => {
+      this.currentGoals = goals;
+      console.log("GET Goals SUCCESS", goals)
+    })
+
+    /**
+ * Stories Database
+ */
+    this.Stories.valueChanges().subscribe(stories => {
+      this.stories = stories;
+      console.log("GET Stories SUCCESS", stories)
+    })
+
+    /**
+  * CTA Database
+  */
+    this.CallToAction.valueChanges().subscribe(cta => {
+      this.callToAction = cta;
+      console.log("GET CTA SUCCESS", cta)
+    })
+
     /**
    * Easy selector helper function
    */
@@ -185,18 +310,6 @@ export class AppComponent implements OnInit {
     }
 
     /**
-     * Hero carousel indicators
-     */
-    let heroCarouselIndicators = select("#hero-carousel-indicators")
-    let heroCarouselItems = select('#heroCarousel .carousel-item', true)
-
-    heroCarouselItems.forEach((item, index) => {
-      (index === 0) ?
-        heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "' class='active'></li>" :
-        heroCarouselIndicators.innerHTML += "<li data-bs-target='#heroCarousel' data-bs-slide-to='" + index + "'></li>"
-    });
-
-    /**
      * Back to top button
      */
     let backtotop = select('.back-to-top')
@@ -268,7 +381,7 @@ export class AppComponent implements OnInit {
       const wp = new Waypoint({
         element: skilsContent,
         offset: '80%',
-        handler: function (direction) {
+        handler: function (direction: any) {
           let progress = select('.progress .progress-bar', true);
           progress.forEach((el) => {
             el.style.width = el.getAttribute('aria-valuenow') + '%'
@@ -277,5 +390,6 @@ export class AppComponent implements OnInit {
       })
       return wp;
     }
+
   }
 }

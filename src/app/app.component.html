@@ -1,64 +1,43 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero">
   <div class="hero-container">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
-
-      <div class="carousel-inner" role="listbox">
-
-        <!-- Slide 1 -->
-        <div class="carousel-item active">
-          <div class="carousel-background"><img src="assets/img/slide/4-teens-sunset.jpg" alt=""></div>
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="" data-aos="fade-down">Welcome to <span>TLGYO.ORG</span></h2>
-              <p class="" data-aos="fade-up">Our Mission is to enrich the futures of our youth by providing a safe and nurturing environment for them to grow and
+    <carousel [isAnimated]="true" id="heroCarousel" class="">
+      <slide *ngFor="let slide of heroSlides; let i = index;">
+        <div class="carousel-background"><img [src]="'assets/img/slide/' + slide.src" [alt]="slide.alt"></div>
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animated fadeInDown" data-aos="fade-down">{{slide.title}}</h2>
+            <p class="" data-aos="fade-up">{{slide.subtitle}}</p>
+            <a *ngIf="slide.button" [href]="slide.button.link" class="btn-get-started scrollto" data-aos="fade-up">{{slide.button.text}}</a>
+          </div>
+        </div>
+      </slide>
+      <!-- <slide>
+        <div class="carousel-background"><img src="assets/img/slide/4-teens-sunset.jpg" alt=""></div>
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animated fadeInDown" data-aos="fade-down">Welcome to <span>TLGYO</span></h2>
+            <p class="" data-aos="fade-up">Our Mission is to enrich the futures of our youth by providing a safe and nurturing
+              environment for them to grow and
               develop</p>
-              <a href="#donation" class="btn-get-started scrollto" data-aos="fade-up">DONATE NOW</a>
-            </div>
+            <a href="#donation" class="btn-get-started scrollto" data-aos="fade-up">Donate now</a>
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item">
-          <div class="carousel-background"><img src="assets/img/slide/slide-2.jpg" alt=""></div>
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-                ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
-                Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
-            </div>
+      </slide>
+      <slide>
+        <div class="carousel-background"><img src="assets/img/slide/teens-facing-shore.jpg" alt=""></div>
+        <div class="carousel-container">
+          <div class="carousel-content">
+            <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
+            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
+              ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
+              Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
+            <a href="#about" class="btn-get-started scrollto">Learn more</a>
           </div>
         </div>
+      </slide> -->
+    </carousel>
 
-        <!-- Slide 3 -->
-        <div class="carousel-item">
-          <div class="carousel-background"><img src="assets/img/slide/slide-3.jpg" alt=""></div>
-          <div class="carousel-container">
-            <div class="carousel-content">
-              <h2 class="" data-aos="fade-down">Sequi ea ut et est quaerat</h2>
-              <p class="" data-aos="fade-down">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-                ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
-                Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bi bi-chevron-double-left" aria-hidden="true"></span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bi bi-chevron-double-right" aria-hidden="true"></span>
-      </a>
-
-    </div>
   </div>
 </section><!-- End Hero -->
 
@@ -76,7 +55,7 @@
       <ul>
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-        <li><a class="nav-link scrollto" href="#services">Services</a></li>
+        <li><a class="nav-link scrollto" href="#programs">Programs</a></li>
         <li><a class="nav-link scrollto" href="#team">Team</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -112,10 +91,11 @@
 
       <div class="section-title">
         <h2>About Us</h2>
-        <p>TLGYO was founded to help give at risk youth their best chance. Our main goal is to help teens in need have the most
-        successful future possible. We work to accomplish this by providing them with opportunities to build skills to help them
-        maintain healthy lifestyles, while also providing them with the tools they need to become productive, successful members
-        of society.</p>
+        <p>LGYO is a registered 501(c)3 non-profit organization, founded to help give any youth in need a bright future. Our main
+        purpose is to assist at-risk teenagers in achieving their full potential. We work to do this by providing them
+        with an opportunity to develop skills that will help them live healthier lives while developing the tools they need
+        to be productive and successful members of society.
+</p>
       </div>
 
       <div class="row">
@@ -123,29 +103,30 @@
           <img src="assets/img/about.jpg" class="img-fluid" alt="">
         </div>
         <div class="col-lg-6 pt-4 pt-lg-0 content">
-          <h3>TLGYO.ORG <strong>wants to be able to enrich the futures of our youth by providing a safe and nurturing environment for
-          them to grow and develop.</strong></h3>
-          <p class="fst-italic">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua.
+          <h3>TLGYO <strong>seeks to improve our children's futures by providing a secure and supportive atmosphere in which they may grow and
+          develop.</strong></h3>
+          <p class="fst-italic mb-1">
+            <i class="bi bi-quote" style="font-size: 1.5rem;"></i> Good habits formed at youth make all the difference<br>
           </p>
+          <p><strong>-Aristotle</strong></p>
           <p>
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            As a relatively new organization, our current programs are in their early phases, and are growing every day. We are
+            always looking for individuals, groups, or businesses that are interested in donating funds, products, or their time to
+            this worthy cause.
           </p>
 
           <div class="skills-content">
-
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
+            <h2>Fundraisers, and Other Goals</h2>
+            <p>See progress of specific goals for donations, fundraisers.</p>
+            <div *ngFor="let goal of currentGoals; let i = index;" class="progress">
+              <span class="skill">{{goal.title}} <i class="val">{{goal.value}}/{{goal.target}}{{goal.unit}}</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="goal.value" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
 
-            <div class="progress">
+            <!-- <div class="progress">
               <span class="skill">CSS <i class="val">90%</i></span>
               <div class="progress-bar-wrap">
                 <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
@@ -167,7 +148,7 @@
                 <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
-            </div>
+            </div> -->
 
           </div>
 
@@ -182,151 +163,68 @@
     <div class="container">
 
       <div class="row no-gutters">
-
-        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
+        <div *ngFor="let count of currentCounts; let i = index;" class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
           <div class="count-box">
-            <i class="bi bi-emoji-smile"></i>
-            <span [countUp]="345" [options]="countsOptions"
-              class="purecounter">0</span>
-            <p><strong>Donations</strong> from people like you</p>
-            <a href="#">Find out more &raquo;</a>
+            <i class="bi" [ngClass]="count.icon"></i>
+            <span [countUp]="count.count" [options]="countsOptions" class="purecounter">0</span>
+            <div [innerHTML]="count.details"></div>
+            <!-- <a href="#">Find out more &raquo;</a> -->
           </div>
         </div>
-
-        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box">
-            <i class="bi bi-journal-richtext"></i>
-            <span [countUp]="8" (complete)="countStarted($event)" [options]="countsOptions"
-              class="purecounter"></span>
-            <p><strong>Local Partners</strong> working with us to proide our services</p>
-            <a href="#">Find out more &raquo;</a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box">
-            <i class="bi bi-emoji-smile"></i>
-            <span [countUp]="500" [options]="countsOptions"
-              class="purecounter"></span>
-            <p><strong>Children Helped</strong> aut commodi quaerat. Aliquam ratione</p>
-            <a href="#">Find out more &raquo;</a>
-          </div>
-        </div>
-
-        <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box">
-            <i class="bi bi-people"></i>
-            <span [countUp]="3" [options]="{duration: 15}"
-              class="purecounter"></span>
-            <p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
-            <a href="#">Find out more &raquo;</a>
-          </div>
-        </div>
-
       </div>
 
     </div>
   </section><!-- End Counts Section -->
 
-  <!-- ======= Our Services Section ======= -->
-  <section id="services" class="services">
+  <!-- ======= Our Programs Section ======= -->
+  <section id="programs" class="services">
     <div class="container">
 
       <div class="section-title">
-        <h2>Our Services</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
+        <h2>Our Programs</h2>
+        <p>TLGYO is involved in a variety of youth outreach services and programs that directly and indirectly benefit at-risk teens. Our growing organization has plans to increase the number of programs in the coming year.</p>
       </div>
 
       <div class="row">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div *ngFor="let program of programList; let i = index;" class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" (click)="openProgramModal(programTemplate, i)">
           <div class="icon-box">
-            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box">
-            <div class="icon"><i class="bx bx-world"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+            <div *ngIf="program.icon" class="icon"><i class="bx" [ngClass]="program.icon"></i></div>
+            <h4 class="title"><a href="javascript:void(0)">{{program.title}}</a></h4>
+            <p class="description">{{program.description}}</p>
           </div>
         </div>
 
       </div>
 
     </div>
-  </section><!-- End Our Services Section -->
+  </section><!-- End Our Programs Section -->
 
   <!-- ======= Cta Section ======= -->
-  <section class="cta">
+  <section *ngIf="callToAction?.show" class="cta" [style.background-image]="'url(' + callToAction?.background + ')'">
     <div class="container">
 
       <div class="text-center">
-        <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <h3>{{callToAction?.title }}</h3>
+        <p> {{callToAction?.details}}
         </p>
-        <a class="cta-btn" href="#">Call To Action</a>
+        <a class="cta-btn" [ngClass]="callToAction?.button?.classes" [href]="callToAction?.button?.link">{{callToAction?.button?.text}}</a>
       </div>
 
     </div>
   </section><!-- End Cta Section -->
 
-  <!-- ======= More Services Section ======= -->
+  <!-- ======= More Programs Section ======= -->
   <section class="more-services section-bg">
     <div class="container">
 
       <div class="row">
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div *ngFor="let story of stories; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="card">
-            <img src="assets/img/more-service-1.jpg" class="card-img-top" alt="...">
+            <img [src]="story.image.src" class="card-img-top" [alt]="story.image.alt">
             <div class="card-body">
-              <h5 class="card-title"><a href="">Autem sunt earum</a></h5>
-              <p class="card-text">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae
-                dolores dolorem tempore</p>
-              <a href="#" class="btn">Explore more</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="card">
-            <img src="assets/img/more-service-2.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Nobis et tempore</a></h5>
-              <p class="card-text">Ut quas omnis est. Non et aut tempora dignissimos similique in dignissimos. Sit
-                incidunt et odit iusto</p>
-              <a href="#" class="btn">Explore more</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="card">
-            <img src="assets/img/more-service-3.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title"><a href="">Facere quia quae dolores</a></h5>
-              <p class="card-text">Modi ut et delectus. Modi nobis saepe voluptates nostrum. Sed quod consequatur quia
-                provident dera</p>
-              <a href="#" class="btn">Explore more</a>
+              <h5 class="card-title"><a href="javascript:void(0)">{{story.title}}</a></h5>
+              <p class="card-text">{{story.description}}</p>
+              <button *ngIf="story.button" class="btn" [ngClass]="story.button.classes" (click)="openStoryModal(storyTemplate, i)">{{story?.button?.text}}</button>
             </div>
           </div>
         </div>
@@ -344,54 +242,25 @@
         <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
           <div class="content">
-            <h3>Eum ipsam laborum deleniti <strong>velit pariatur architecto aut nihil</strong></h3>
+            <h3>Have a question? <strong>Take a look at our FAQ list</strong></h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Duis aute irure dolor in reprehenderit
+              TLGYO has compiled a list of your most frequently asked questions. In it you will find links to important resources, as well information about our programs, and how to contribute to helping at-risk youth.
             </p>
           </div>
+          <!-- <accordion [isAnimated]="true">
+            <accordion-group heading="Static Header">
+              This content is straight in the template.
+            </accordion-group>
+          </accordion> -->
 
           <div class="accordion-list">
             <ul>
-              <li>
-                <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Non
-                  consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i
+              <li *ngFor="let q of faqList; let i = index;">
+                <a class="collapse" (click)="openSelectedFAQ(i)" [attr.aria-expanded]="selectedFAQId == i" aria-controls="collapseBasic"><span>{{q.id}}</span> {{q.title}} <i class="bx bx-chevron-down icon-show"></i><i
                     class="bx bx-chevron-up icon-close"></i></a>
-                <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                  <p>
-                    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                    gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                  </p>
+                <div [id]="'faqListItem' + i" [collapse]="selectedFAQId != i" [isAnimated]="true" class="collapse" [innerHTML]="q.body">
                 </div>
               </li>
-
-              <li>
-                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span>
-                  Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i
-                    class="bx bx-chevron-up icon-close"></i></a>
-                <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                  <p>
-                    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                    donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque
-                    elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                  </p>
-                </div>
-              </li>
-
-              <li>
-                <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Dolor
-                  sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i
-                    class="bx bx-chevron-up icon-close"></i></a>
-                <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                  <p>
-                    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar
-                    elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque
-                    eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis
-                    sed odio morbi quis
-                  </p>
-                </div>
-              </li>
-
             </ul>
           </div>
 
@@ -411,14 +280,33 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Donate to our organization</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
+        <h2>Donate and make a direct impact</h2>
+        <p>Giving even a small amount goes a long way. Your entire donation is allocated to enable TLGYO programs and services, to the benefit of teenagers in need of help.</p>
       </div>
 
+      <div class="row justify-content-center mb-5">
+        <button class="col-3 btn btn-outline-primary">Donate now</button>
+      </div>
       <div class="row donation-container">
-
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Financial Donations Allocated</h5>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Programs
+                <span class="badge bg-primary rounded-pill">40%</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Services
+                <span class="badge bg-primary rounded-pill">40%</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                Administrative
+                <span class="badge bg-primary rounded-pill">10%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
 
 
       </div>
@@ -523,9 +411,7 @@
     <div class="container">
       <div class="section-title">
         <h2>Contact Us</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
+        <p>TLGYO is always looking for ways to contribute to local, and national communities utilizing our youth outreach programs and services. If you have an opportunity, idea, question, or comment, please don't hesitate to send us a message. We appreciate any feed-back or information you provide.</p>
       </div>
     </div>
 
@@ -540,53 +426,53 @@
             <div class="col-lg-6 info d-flex flex-column align-items-stretch">
               <i class="bx bx-map"></i>
               <h4>Address</h4>
-              <p>A108 Adam Street,<br>New York, NY 535022</p>
+              <p>Hopewell, OH 43746</p>
             </div>
             <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
               <i class="bx bx-phone"></i>
               <h4>Call Us</h4>
-              <p>+1 5589 55488 55<br>+1 5589 22548 64</p>
+              <p>+1 740 624 0366</p>
             </div>
             <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
               <i class="bx bx-envelope"></i>
               <h4>Email Us</h4>
-              <p>contact@example.com<br>info@example.com</p>
+              <p>hello@tlgyo.orgm</p>
             </div>
             <div class="col-lg-6 info d-flex flex-column align-items-stretch">
               <i class="bx bx-time-five"></i>
               <h4>Working Hours</h4>
-              <p>Mon - Fri: 9AM to 5PM<br>Sunday: 9AM to 1PM</p>
+              <p>Mon - Fri: 9AM to 5PM</p>
             </div>
           </div>
 
         </div>
 
         <div class="col-lg-6 d-flex align-items-stretch contact-form-wrap">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+          <form #contactForm="ngForm" name="contactForm" role="form" class="php-email-form">
             <div class="row">
               <div class="col-md-6 form-group">
                 <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                <input [(ngModel)]="contactModel.name" #contactName="ngModel" type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
               </div>
               <div class="col-md-6 form-group mt-3 mt-md-0">
                 <label for="email">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                <input [(ngModel)]="contactModel.email" #contactEmail="ngModel" type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
               </div>
             </div>
             <div class="form-group mt-3">
               <label for="subject">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              <input [(ngModel)]="contactModel.subject" #contactSubject="ngModel" type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
             </div>
             <div class="form-group mt-3">
               <label for="message">Message</label>
-              <textarea class="form-control" name="message" rows="8" required></textarea>
+              <textarea [(ngModel)]="contactModel.msg" #contactMsg="ngModel" class="form-control" name="message" rows="8" required></textarea>
             </div>
-            <div class="my-3">
+            <!-- <div class="my-3">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            </div> -->
+            <div class="text-center"><button type="button" (click)="addContact(contactModel, contactForm)">Send Message</button></div>
           </form>
         </div>
 
@@ -606,10 +492,9 @@
         <div class="col-lg-3 col-md-6 footer-info">
           <h3>TLGYO.ORG</h3>
           <p>
-            A108 Adam Street <br>
-            NY 535022, USA<br><br>
-            <strong>Phone:</strong> +1 5589 55488 55<br>
-            <strong>Email:</strong> info@example.com<br>
+            Hopewell, OH 43746<br><br>
+            <strong>Phone:</strong> +1 740 624 0366<br>
+            <strong>Email:</strong> hello@tlgyo.org<br>
           </p>
           <div class="social-links mt-3">
             <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
@@ -654,7 +539,7 @@
               <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email"
                 placeholder="Email">
             </div>
-            <button type="button" class="btn btn-get-started float-end mt-2"
+            <button type="button" class="btn float-end mt-2"
               (click)="addSubscriber(subscriberModel, subscribeForm)">SUBSCRIBE</button>
           </form>
           <!-- <form #subscribeForm="ngForm">
@@ -708,4 +593,40 @@
   </div>
 </div>
 
+<!-- Program Modal -->
+<ng-template #programTemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{selectedProgram?.title}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div [innerHTML]="selectedProgram?.body"></div>
+  </div>
+  <div class="modal-footer">
+    <a [href]="selectedProgram.link" target="_blank" class="btn btn-primary float-end">Learn more</a>
+  </div>
+</ng-template>
+
+<!-- Story Modal -->
+<ng-template #storyTemplate>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{selectedStory?.title}}</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+      <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div [innerHTML]="selectedStory?.story?.body"></div>
+  </div>
+  <div class="modal-footer">
+    <a [href]="selectedStory.link" target="_blank" class="btn btn-primary float-end">Learn more</a>
+  </div>
+</ng-template>
+
 <alert [isOpen]="alertConfig.show" [dismissOnTimeout]="alertConfig.timeout" [type]="alertConfig.type" [dismissible]="true">{{ alertConfig.msg }}</alert>
+
+<div class="animated" [ngClass]="showLoader ? '':'slideOutDown'" id="loader-container">
+  <div class="heart"></div>
+</div>
