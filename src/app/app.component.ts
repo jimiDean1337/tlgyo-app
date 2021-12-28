@@ -18,7 +18,7 @@ declare const Waypoint: any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   providers: [
-    { provide: CarouselConfig, useValue: {  interval: 100000, showIndicators: true,  pauseOnFocus: true} }
+    { provide: CarouselConfig, useValue: {  interval: 10000, showIndicators: true,  pauseOnFocus: true} }
   ]
 })
 export class AppComponent implements OnInit {
@@ -47,6 +47,7 @@ export class AppComponent implements OnInit {
   contactModel: any = {};
   programList: any;
   faqList: any;
+  teamList: any;
   heroSlides: any;
   currentCounts: any;
   currentGoals: any;
@@ -54,6 +55,7 @@ export class AppComponent implements OnInit {
   stories: any;
   selectedStory: any;
   selectedFAQId: number = 0;
+  contactInfo: any;
 
   constructor(
     private modalService: BsModalService,
@@ -153,25 +155,43 @@ export class AppComponent implements OnInit {
     return this.db.list('stories');
   }
 
+  private get Team() {
+    return this.db.list('team');
+  }
+
+  private get ContactInfo() {
+    return this.db.object('contact');
+  }
+
   ngOnInit() {
     Aos.init({
-      useClassNames: true
+      useClassNames: true,
+      once: false,
+      duration: 900
     })
     // TODO: Remove newsletter display comment before deploy
     setTimeout(() => {
       this.isNewsletterModalShown = true;
-    }, 5000)
+    }, 7500)
 
     setTimeout(() => {
       this.showLoader = false;
-    }, 3000)
+    }, 2500)
+
+    /**
+  * Contact Database
+  */
+    this.ContactInfo.valueChanges().subscribe(contact => {
+      this.contactInfo = contact;
+      console.log("GET ContactInfo", contact)
+    })
 
     /**
    * Programs Database
    */
     this.Programs.valueChanges().subscribe(programs => {
       this.programList = programs;
-      console.log("GET Programs SUCCESS", programs)
+      console.log("GET Programs", programs)
     })
 
     /**
@@ -179,7 +199,15 @@ export class AppComponent implements OnInit {
   */
     this.FAQ.valueChanges().subscribe(faq => {
       this.faqList = faq;
-      console.log("GET FAQs SUCCESS", faq)
+      console.log("GET FAQs", faq)
+    })
+
+    /**
+  * Team Database
+  */
+    this.Team.valueChanges().subscribe(team => {
+      this.teamList = team;
+      console.log("GET Team", team)
     })
 
     /**
@@ -187,7 +215,7 @@ export class AppComponent implements OnInit {
    */
     this.HeroSlides.valueChanges().subscribe(slides => {
       this.heroSlides = slides;
-      console.log("GET Slides SUCCESS", slides)
+      console.log("GET Slides", slides)
     })
 
     /**
@@ -195,7 +223,7 @@ export class AppComponent implements OnInit {
    */
     this.CurrentCounts.valueChanges().subscribe(counts => {
       this.currentCounts = counts;
-      console.log("GET Counts SUCCESS", counts)
+      console.log("GET Counts", counts)
     })
 
     /**
@@ -203,7 +231,7 @@ export class AppComponent implements OnInit {
   */
     this.CurrentGoals.valueChanges().subscribe(goals => {
       this.currentGoals = goals;
-      console.log("GET Goals SUCCESS", goals)
+      console.log("GET Goals", goals)
     })
 
     /**
@@ -211,7 +239,7 @@ export class AppComponent implements OnInit {
  */
     this.Stories.valueChanges().subscribe(stories => {
       this.stories = stories;
-      console.log("GET Stories SUCCESS", stories)
+      console.log("GET Stories", stories)
     })
 
     /**
@@ -219,7 +247,7 @@ export class AppComponent implements OnInit {
   */
     this.CallToAction.valueChanges().subscribe(cta => {
       this.callToAction = cta;
-      console.log("GET CTA SUCCESS", cta)
+      console.log("GET CTA", cta)
     })
 
     /**
@@ -381,10 +409,10 @@ export class AppComponent implements OnInit {
       const wp = new Waypoint({
         element: skilsContent,
         offset: '80%',
-        handler: function (direction: any) {
+        handler: (direction: any) => {
           let progress = select('.progress .progress-bar', true);
           progress.forEach((el) => {
-            el.style.width = el.getAttribute('aria-valuenow') + '%'
+            el.style.width = el.getAttribute('aria-valuenow') + '%';
           });
         }
       })

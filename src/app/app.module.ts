@@ -13,6 +13,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CountUpModule } from 'ngx-countup';
 import { environment } from 'src/environments/environment';
+import { CookieService } from 'ngx-cookie-service';
 
 // import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,6 +38,7 @@ import { AppComponent } from './app.component';
     // AppRoutingModule
   ],
   providers: [
+    CookieService,
     ScreenTrackingService,
     UserTrackingService
   ],

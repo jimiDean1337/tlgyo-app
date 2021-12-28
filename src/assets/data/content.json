@@ -1,0 +1,15 @@
+[
+  {
+    "about": {
+      "title": "About Us",
+      "subtitle": "LGYO is a registered 501(c)3 non-profit organization, founded to help give any youth in need a bright future. Our main purpose is to assist at-risk teenagers in achieving their full potential. We work to do this by providing them with an opportunity to develop skills that will help them live healthier lives while developing the tools they need to be productive and successful members of society.",
+      "image": {
+        "src": "assets/img/about.jpg",
+        "alt": "All Hands In For Teamwork"
+      },
+      "sub_section": {
+        "html": "<h3>TLGYO <strong>seeks to improve our children's futures by providing a secure and supportive atmosphere in which they may grow and develop.</strong></h3> <p class=\"fst-italic mb-1\"><i class=\"bi bi-quote\" style=\"font-size: 1.5rem;\"></i> Good habits formed at youth make all the difference<br></p> <p><strong>-Aristotle</strong></p><p> As a relatively new organization, our current programs are in their early phases, and are growing every day. We are always looking for individuals, groups, or businesses that are interested in donating funds, products, or their time to this worthy cause. </p>"
+      }
+    }
+  }
+]

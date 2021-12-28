@@ -6,9 +6,9 @@
         <div class="carousel-background"><img [src]="'assets/img/slide/' + slide.src" [alt]="slide.alt"></div>
         <div class="carousel-container">
           <div class="carousel-content">
-            <h2 class="animated fadeInDown" data-aos="fade-down">{{slide.title}}</h2>
-            <p class="" data-aos="fade-up">{{slide.subtitle}}</p>
-            <a *ngIf="slide.button" [href]="slide.button.link" class="btn-get-started scrollto" data-aos="fade-up">{{slide.button.text}}</a>
+            <h2 class="" data-aos="fade-down" data-aos-delay="4">{{slide.title}}</h2>
+            <p class="" data-aos="fade-up" data-aos-delay="5">{{slide.subtitle}}</p>
+            <a *ngIf="slide.button" [href]="slide.button.link" class="btn-get-started scrollto" data-aos="fade-up" data-aos-delay="5">{{slide.button.text}}</a>
           </div>
         </div>
       </slide>
@@ -90,65 +90,41 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>About Us</h2>
-        <p>LGYO is a registered 501(c)3 non-profit organization, founded to help give any youth in need a bright future. Our main
-        purpose is to assist at-risk teenagers in achieving their full potential. We work to do this by providing them
-        with an opportunity to develop skills that will help them live healthier lives while developing the tools they need
+        <h2 data-aos="fade-up">About Us</h2>
+        <p data-aos="fade-up">LGYO is a registered 501(c)3 non-profit organization, founded to help give any youth in need a bright future. Our main
+        purpose is to assist at-risk teenagers in achieving their full potential. We work to do this by providing them
+        with an opportunity to develop skills that will help them live healthier lives while developing the tools they need
         to be productive and successful members of society.
 </p>
       </div>
 
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6" data-aos="fade-up">
           <img src="assets/img/about.jpg" class="img-fluid" alt="">
         </div>
-        <div class="col-lg-6 pt-4 pt-lg-0 content">
+        <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-up">
           <h3>TLGYO <strong>seeks to improve our children's futures by providing a secure and supportive atmosphere in which they may grow and
           develop.</strong></h3>
-          <p class="fst-italic mb-1">
+          <p class="fst-italic mb-1" data-aos="fade-up">
             <i class="bi bi-quote" style="font-size: 1.5rem;"></i> Good habits formed at youth make all the difference<br>
           </p>
-          <p><strong>-Aristotle</strong></p>
-          <p>
+          <p data-aos="fade-up"><strong>-Aristotle</strong></p>
+          <p data-aos="fade-up">
             As a relatively new organization, our current programs are in their early phases, and are growing every day. We are
             always looking for individuals, groups, or businesses that are interested in donating funds, products, or their time to
             this worthy cause.
           </p>
 
-          <div class="skills-content">
+          <div class="skills-content" data-aos="fade-up">
             <h2>Fundraisers, and Other Goals</h2>
             <p>See progress of specific goals for donations, fundraisers.</p>
             <div *ngFor="let goal of currentGoals; let i = index;" class="progress">
-              <span class="skill">{{goal.title}} <i class="val">{{goal.value}}/{{goal.target}}{{goal.unit}}</i></span>
+              <span class="skill">{{goal?.title}} <i class="val">{{goal?.value}}/{{goal.target}}{{goal?.unit}}</i></span>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="goal.value" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="goal?.percentage" aria-valuemin="0" [attr.aria-valuemax]="goal?.target">
                 </div>
               </div>
             </div>
-
-            <!-- <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">Photoshop <i class="val">55%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div> -->
 
           </div>
 
@@ -164,7 +140,7 @@
 
       <div class="row no-gutters">
         <div *ngFor="let count of currentCounts; let i = index;" class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box">
+          <div class="count-box" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
             <i class="bi" [ngClass]="count.icon"></i>
             <span [countUp]="count.count" [options]="countsOptions" class="purecounter">0</span>
             <div [innerHTML]="count.details"></div>
@@ -181,12 +157,12 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Our Programs</h2>
-        <p>TLGYO is involved in a variety of youth outreach services and programs that directly and indirectly benefit at-risk teens. Our growing organization has plans to increase the number of programs in the coming year.</p>
+        <h2 data-aos="fade-up">Our Programs</h2>
+        <p data-aos="fade-up">TLGYO is involved in a variety of youth outreach services and programs that directly and indirectly benefit at-risk teens. Our growing organization has plans to increase the number of programs in the coming year.</p>
       </div>
 
       <div class="row">
-        <div *ngFor="let program of programList; let i = index;" class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" (click)="openProgramModal(programTemplate, i)">
+        <div *ngFor="let program of programList; let i = index;" class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" (click)="openProgramModal(programTemplate, i)" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
           <div class="icon-box">
             <div *ngIf="program.icon" class="icon"><i class="bx" [ngClass]="program.icon"></i></div>
             <h4 class="title"><a href="javascript:void(0)">{{program.title}}</a></h4>
@@ -204,10 +180,10 @@
     <div class="container">
 
       <div class="text-center">
-        <h3>{{callToAction?.title }}</h3>
-        <p> {{callToAction?.details}}
+        <h3 data-aos="fade-up">{{callToAction?.title }}</h3>
+        <p data-aos="fade-up"> {{callToAction?.details}}
         </p>
-        <a class="cta-btn" [ngClass]="callToAction?.button?.classes" [href]="callToAction?.button?.link">{{callToAction?.button?.text}}</a>
+        <a class="cta-btn" [ngClass]="callToAction?.button?.classes" [href]="callToAction?.button?.link" data-aos="fade-up" data-aos-delay="250">{{callToAction?.button?.text}}</a>
       </div>
 
     </div>
@@ -216,15 +192,18 @@
   <!-- ======= More Programs Section ======= -->
   <section class="more-services section-bg">
     <div class="container">
-
+      <div class="section-title">
+        <h2 data-aos="fade-up">Outreach In Action</h2>
+        <p data-aos="fade-up">Follow the stories about TLGYO events, fundraisers, and the amazing people who are making an impact in the lives of youth. Find inspiration as well as information on how you can participate and make a genuine difference in the lives of at-risk 12 to 17 year olds.</p>
+      </div>
       <div class="row">
-        <div *ngFor="let story of stories; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+        <div *ngFor="let story of stories; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
           <div class="card">
             <img [src]="story.image.src" class="card-img-top" [alt]="story.image.alt">
             <div class="card-body">
-              <h5 class="card-title"><a href="javascript:void(0)">{{story.title}}</a></h5>
-              <p class="card-text">{{story.description}}</p>
-              <button *ngIf="story.button" class="btn" [ngClass]="story.button.classes" (click)="openStoryModal(storyTemplate, i)">{{story?.button?.text}}</button>
+              <h5 class="card-title" data-aos="fade-up"><a href="javascript:void(0)">{{story.title}}</a></h5>
+              <p class="card-text" data-aos="fade-up">{{story.description}}</p>
+              <button data-aos="fade-up" *ngIf="story.button" class="btn" [ngClass]="story.button.classes" (click)="openStoryModal(storyTemplate, i)">{{story?.button?.text}}</button>
             </div>
           </div>
         </div>
@@ -241,21 +220,16 @@
 
         <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
 
-          <div class="content">
+          <div class="content" data-aos="fade-up">
             <h3>Have a question? <strong>Take a look at our FAQ list</strong></h3>
             <p>
-              TLGYO has compiled a list of your most frequently asked questions. In it you will find links to important resources, as well information about our programs, and how to contribute to helping at-risk youth.
+              TLGYO has compiled a list of some frequently asked questions. In it you will find useful links, important resources, as well information about our programs, and how to contribute to helping at-risk youth.
             </p>
           </div>
-          <!-- <accordion [isAnimated]="true">
-            <accordion-group heading="Static Header">
-              This content is straight in the template.
-            </accordion-group>
-          </accordion> -->
 
           <div class="accordion-list">
             <ul>
-              <li *ngFor="let q of faqList; let i = index;">
+              <li *ngFor="let q of faqList; let i = index;" data-aos="fade-up" [attr.data-aos-delay]="i * 250">
                 <a class="collapse" (click)="openSelectedFAQ(i)" [attr.aria-expanded]="selectedFAQId == i" aria-controls="collapseBasic"><span>{{q.id}}</span> {{q.title}} <i class="bx bx-chevron-down icon-show"></i><i
                     class="bx bx-chevron-up icon-close"></i></a>
                 <div [id]="'faqListItem' + i" [collapse]="selectedFAQId != i" [isAnimated]="true" class="collapse" [innerHTML]="q.body">
@@ -267,28 +241,26 @@
         </div>
 
         <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-          style="background-image: url(assets/img/info-box.jpg);">&nbsp;</div>
+          style="background-image: url(assets/img/info-box.jpg);" data-aos="fade-up">&nbsp;</div>
       </div>
 
     </div>
   </section><!-- End Info Box Section -->
 
-
-  <!-- TODO: Add donation section. Possibly as a seperate ?component/feature? -->
   <!-- ======= Donation Section ======= -->
   <section id="donation" class="donation section-bg">
     <div class="container">
 
       <div class="section-title">
-        <h2>Donate and make a direct impact</h2>
-        <p>Giving even a small amount goes a long way. Your entire donation is allocated to enable TLGYO programs and services, to the benefit of teenagers in need of help.</p>
+        <h2 data-aos="fade-up">Donate and make a direct impact</h2>
+        <p data-aos="fade-up">Giving even a small amount goes a long way. Your entire donation is allocated to enable TLGYO programs and services, to the benefit of teenagers in need of help. Your contribution could get supplies for teachers to improve their students educational experiences, or shipping costs to deliver Christmas stockings to children who would otherwise see very little, or nothing at all, this holiday season. Donate today and help us make a difference.</p>
       </div>
 
-      <div class="row justify-content-center mb-5">
-        <button class="col-3 btn btn-outline-primary">Donate now</button>
+      <div class="row justify-content-center mb-5" data-aos="fade-up">
+        <a href="https://checkout.square.site/merchant/MLVHAV28WTS90/checkout/R5G6HXPJET7AQ7JJJ3FUUKHB" target="_blank" class="col-lg-3 col-md-6 btn btn-primary" style="max-width: 60vw;">Make a donation</a>
       </div>
       <div class="row donation-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <div class="card-body">
             <h5 class="card-title">Financial Donations Allocated</h5>
             <ul class="list-group">
@@ -320,86 +292,26 @@
     <div class="container">
 
       <div class="section-title">
-        <h2>Our Team</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-          consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-          in iste officiis commodi quidem hic quas.</p>
+        <h2 data-aos="fade-up">Our Team</h2>
+        <p data-aos="fade-up">Change can begin with one person. And that is how TLGYO came to exist. Our founder made the decision to stand up and push back in support of teenagers that may not have anyone looking out for their well-being, let alone thinking about their future. Momentum has increased, and with growing resources, Tashia Cardec has created an organization that fulfills a promise to rescue at-risk teenagers from the pain, and loss that is the direct result of abuse, addiction, and a lack of positive reinforcement and support. With every contribution from supporters like you, TLGYO increases the chance of a brighter future for more, and more youth.</p>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center">
 
-        <div class="col-xl-3 col-lg-4 col-md-6">
-          <div class="member">
-            <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+        <div *ngFor="let member of teamList; let i = index;" class="col-xl-3 col-lg-4 col-md-6">
+          <div class="member" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+            <img [src]="member.image.src" class="img-fluid" [alt]="member.image.alt">
             <div class="member-info">
               <div class="member-info-content">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>{{member.name}}</h4>
+                <span>{{member.title}}</span>
               </div>
               <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a *ngFor="let link of member.socials; let i = index;" [href]="link.href"><i class="bi" [ngClass]="link.icon"></i></a>
               </div>
             </div>
           </div>
         </div>
-
-        <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.1s">
-          <div class="member">
-            <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.2s">
-          <div class="member">
-            <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-xl-3 col-lg-4 col-md-6" data-wow-delay="0.3s">
-          <div class="member">
-            <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
 
     </div>
@@ -410,8 +322,8 @@
 
     <div class="container">
       <div class="section-title">
-        <h2>Contact Us</h2>
-        <p>TLGYO is always looking for ways to contribute to local, and national communities utilizing our youth outreach programs and services. If you have an opportunity, idea, question, or comment, please don't hesitate to send us a message. We appreciate any feed-back or information you provide.</p>
+        <h2 data-aos="fade-up">Contact Us</h2>
+        <p data-aos="fade-up">TLGYO is always looking for ways to contribute to local, and national communities utilizing our youth outreach programs and services. If you have an opportunity, idea, question, or comment, please don't hesitate to send us a message. We appreciate any feed-back or information you provide.</p>
       </div>
     </div>
 
@@ -423,31 +335,31 @@
 
           <div class="row">
 
-            <div class="col-lg-6 info d-flex flex-column align-items-stretch">
+            <div class="col-lg-6 info d-flex flex-column align-items-stretch" data-aos="fade-up" [attr.data-aos-delay]="350">
               <i class="bx bx-map"></i>
-              <h4>Address</h4>
-              <p>Hopewell, OH 43746</p>
+              <h4>Location</h4>
+              <p>{{contactInfo?.address?.full}}</p>
             </div>
-            <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
+            <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch" data-aos="fade-up">
               <i class="bx bx-phone"></i>
               <h4>Call Us</h4>
-              <p>+1 740 624 0366</p>
+              <p>+1 {{contactInfo?.phone}}</p>
             </div>
-            <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
+            <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch" data-aos="fade-up">
               <i class="bx bx-envelope"></i>
               <h4>Email Us</h4>
-              <p>hello@tlgyo.orgm</p>
+              <p>{{contactInfo?.email}}</p>
             </div>
-            <div class="col-lg-6 info d-flex flex-column align-items-stretch">
+            <div class="col-lg-6 info d-flex flex-column align-items-stretch" data-aos="fade-up">
               <i class="bx bx-time-five"></i>
               <h4>Working Hours</h4>
-              <p>Mon - Fri: 9AM to 5PM</p>
+              <p>{{contactInfo?.business_hours}}</p>
             </div>
           </div>
 
         </div>
 
-        <div class="col-lg-6 d-flex align-items-stretch contact-form-wrap">
+        <div class="col-lg-6 d-flex align-items-stretch contact-form-wrap" data-aos="fade-up">
           <form #contactForm="ngForm" name="contactForm" role="form" class="php-email-form">
             <div class="row">
               <div class="col-md-6 form-group">
@@ -472,7 +384,7 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div> -->
-            <div class="text-center"><button type="button" (click)="addContact(contactModel, contactForm)">Send Message</button></div>
+            <div class="text-center mt-3"><button type="button" (click)="addContact(contactModel, contactForm)">Send Message</button></div>
           </form>
         </div>
 
@@ -490,40 +402,40 @@
       <div class="row">
 
         <div class="col-lg-3 col-md-6 footer-info">
-          <h3>TLGYO.ORG</h3>
+          <h3>{{contactInfo?.name}}</h3>
           <p>
-            Hopewell, OH 43746<br><br>
-            <strong>Phone:</strong> +1 740 624 0366<br>
-            <strong>Email:</strong> hello@tlgyo.org<br>
+            {{contactInfo?.address?.full}}<br><br>
+            <strong>Phone:</strong> +1 {{contactInfo?.phone}}<br>
+            <strong>Email:</strong> {{contactInfo?.email}}<br>
           </p>
           <div class="social-links mt-3">
-            <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-            <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <!-- <a href="" rget="_blank" class="twitter"><i class="bx bxl-twitter"></i></a> -->
+            <a data-aos="fade-up" data-aos-delay="0" href="https://www.facebook.com/lookingglassyouthoutreach" rget="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+            <a data-aos="fade-up" data-aos-delay="250" href="https://www.instagram.com/lookingglassyouthoutreach/" rget="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+            <!-- <a href="#" rget="_blank" class="google-plus"><i class="bx bxl-skype"></i></a> -->
+            <a data-aos="fade-up" data-aos-delay="350" href="https://www.linkedin.com/in/tashia-cardec-a40b91b0" rget="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#aboutus">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#programs">Programs</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Our Services</h4>
+          <h4>Our Programs</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#programs">COPE</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#programs">Teen Sponsorship</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="#programs">Teacher Sponsorship</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="https://checkout.square.site/merchant/MLVHAV28WTS90/checkout/R5G6HXPJET7AQ7JJJ3FUUKHB" target="_blank">Make A Donation</a></li>
+            <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li> -->
           </ul>
         </div>
 
@@ -542,10 +454,6 @@
             <button type="button" class="btn float-end mt-2"
               (click)="addSubscriber(subscriberModel, subscribeForm)">SUBSCRIBE</button>
           </form>
-          <!-- <form #subscribeForm="ngForm">
-            <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" name="email">
-            <button type="button" (click)="addSubscriber(subscriberModel, subscribeForm)">Subscribe</button>
-          </form> -->
         </div>
 
       </div>
@@ -554,20 +462,23 @@
 
   <div class="container">
     <div class="copyright">
-      &copy; Copyright <strong><span>TLGYO.ORG</span></strong>. All Rights Reserved
+      &copy; Copyright 2021 <strong><span>TLGYO</span></strong> | All Rights Reserved
     </div>
     <div class="credits">
 
-      Made with <i class="bi-heart-fill"></i> <a href="https://suremarketingsolutions.com/"> Sure Marketing Solutions</a>
+      This website was made with <i class="bi-heart-fill"></i> by <a href="https://suremarketingsolutions.com/"> Sure Marketing Solutions</a> a proud supporter of TLGYO.ORG
     </div>
   </div>
 </footer><!-- End Footer -->
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+<a href="#" data-aos="fade-up" data-aos-offset="600" class="back-to-top d-flex align-items-center justify-content-center"><i
     class="bi bi-arrow-up-short"></i></a>
 
+
+<!-- --------------- Modal Templates and Alerts --------------- -->
+
 <!-- Newsletter Popup Modal -->
-<div id="autoNewsletterModal" *ngIf="isNewsletterModalShown" [config]="{ show: isNewsletterModalShown }" (onHidden)="onNewsletterModalHidden()" bsModal #autoNewsletterModal="bs-modal"
+<div id="autoNewsletterModal" *ngIf="isNewsletterModalShown" [config]="{ show: isNewsletterModalShown, ignoreBackdropClick: false, class: 'modal-lg' }" (onHidden)="onNewsletterModalHidden()" bsModal #autoNewsletterModal="bs-modal"
   class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-auto-newsletter">
   <div class="modal-dialog modal-md">
     <div class="modal-content">
@@ -586,6 +497,7 @@
           <div class="form-group">
             <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email" placeholder="Email">
           </div>
+          <span class="text-muted">We respect your privacy</span>
           <button type="button" class="btn btn-get-started float-end mt-2" (click)="addSubscriber(subscriberModel, subscribeForm); hideNewsletterModal();">SUBSCRIBE</button>
         </form>
       </div>
@@ -605,7 +517,7 @@
     <div [innerHTML]="selectedProgram?.body"></div>
   </div>
   <div class="modal-footer">
-    <a [href]="selectedProgram.link" target="_blank" class="btn btn-primary float-end">Learn more</a>
+    <a [href]="selectedProgram.link" target="_blank" class="btn btn-primary float-end" (click)="modalRef?.hide()">Learn more</a>
   </div>
 </ng-template>
 
@@ -621,7 +533,7 @@
     <div [innerHTML]="selectedStory?.story?.body"></div>
   </div>
   <div class="modal-footer">
-    <a [href]="selectedStory.link" target="_blank" class="btn btn-primary float-end">Learn more</a>
+    <a [href]="selectedStory.story.button.link" class="btn btn-primary float-end" (click)="modalRef?.hide()">{{selectedStory.story.button.text}}</a>
   </div>
 </ng-template>
 

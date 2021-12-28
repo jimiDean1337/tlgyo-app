@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Tashia Cardec",
+    "title":"Founder / Executive Director",
+    "image": {
+      "src": "assets/img/team/tashia-cardec.jpg",
+      "alt": "Tashia Cardec Executive Director"
+    },
+    "socials": [
+      {
+        "name": "Facebook",
+        "icon": "bi-facebook",
+        "href": ""
+      },
+      {
+        "name": "Twitter",
+        "icon": "bi-twitter",
+        "href": ""
+      },
+      {
+        "name": "Instagram",
+        "icon": "bi-instagram",
+        "href": ""
+      },
+      {
+        "name": "LinkedIn",
+        "icon": "bi-linkedin",
+        "href": ""
+      }
+    ]
+  },
+  {
+    "name": "Tai Loughman",
+    "title": "Office Manager",
+    "image": {
+      "src": "assets/img/team/tai-loughman.jpg",
+      "alt": "Tai Loughman Office Manager"
+    },
+    "socials": [
+      {
+        "name": "Facebook",
+        "icon": "bi-facebook",
+        "href": ""
+      },
+      {
+        "name": "Twitter",
+        "icon": "bi-twitter",
+        "href": ""
+      },
+      {
+        "name": "Instagram",
+        "icon": "bi-instagram",
+        "href": ""
+      },
+      {
+        "name": "LinkedIn",
+        "icon": "bi-linkedin",
+        "href": ""
+      }
+    ]
+  }
+]

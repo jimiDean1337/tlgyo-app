@@ -34,6 +34,10 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
+.btn-primary {
+  color: $white !important;
+}
+
 .btn-get-started {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -66,7 +70,7 @@ h6 {
   opacity: 0;
   right: 15px;
   bottom: 15px;
-  z-index: 99999;
+  z-index: 1050;
   background: $primary;
   width: 40px;
   height: 40px;
@@ -827,9 +831,13 @@ section {
 # Cta
 --------------------------------------------------------------*/
 .cta {
-  background: linear-gradient(rgba(66, 84, 81, 0.5), rgba(43, 56, 54, 0.5)) fixed center center;
+  background: fixed center center;
   background-size: cover;
   padding: 60px 0;
+
+  // @media (max-width: 767px) {
+  //   background-size:
+  // }
 }
 
 .cta h3 {

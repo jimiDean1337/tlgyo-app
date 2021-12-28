@@ -9,56 +9,71 @@
         "height": ""
       }
     },
-    "description": "Getting covered in paint while putting the 'FUN' in Fundraiser",
+    "description": "Putting some paint covered 'FUN' in Fundraiser",
     "button": {
       "text": "Read more",
       "classes": ""
     },
     "story": {
       "heroImage": "",
-      "body": "<p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>",
+      "body": "<p>It all started with a bet. TLGYO Exec. Director, Tashia Cardec, was challenged by several of the local youth. The challenge was that if TLGYO reached a set fundraising goal, Tashia would allow herself to be 'paint ballooned' by the young challengers.</p><br><p>We are more than proud to announce that once the word got out that if a dollar amount was reached, a certain Youth Outreach Director would face a colorful firing squad equipped with an array of colorful balloons, the goal was met, and rather quickly, we might add.</p><br><p>The action came on a chilly November day, Tashia faced the music. A barrage of multi-colored balloons were hurled her way, resulting in her bright white clothing being covered in bright, wet paint.</p><br><p>The children had a lot of fun, and it was only made better knowing that the funds raised would be used for holiday stockings to be sent to dozens of teens in need. Now that's what we call a 'WIN WIN WIN'!</p><br>",
+      "button": {
+        "text": "Close",
+        "classes": "",
+        "link": "javascript:void(0)"
+      },
       "externalLinks": []
     }
   },
   {
-    "title": "Story 2",
+    "title": "West Muskingum Middle School",
    "image": {
-    "src": "assets/img/stories/painted-fundraiser.jpg",
-    "alt": "Tashia Cardec covered in paint with children",
+    "src": "assets/img/stories/west-muskingum-middle-school.jpg",
+    "alt": "Mrs. Mirgons' Science Lab",
     "size": {
       "width": "",
       "height": ""
     }
   },
-    "description": "Getting covered in paint while putting the 'FUN' in Fundraiser",
+    "description": "Science Teacher Fins An Ally In TLGYO",
     "button": {
       "text": "Read more",
       "classes": ""
     },
     "story": {
       "heroImage": "",
-      "body": "<p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>",
+      "body": "<p>The COVID-19 pandemic has left none unscathed or uneffected. Not to mention the isolation, and anxiousness felt by the students at West Muskingum Middle School. At this particular middle school, 6th grade science teacher, Mrs. Migson, was struggling to find a way for her students to participate in a mineral lab due to a lack of PPE (Personal Protective Equipement) that was needed to protect students from COVID. Queue TLGYO and The Teacher Sponsorship Program.</p><br><p>After visiting several local SuperMarkets, more than 100 pairs of Nitrile gloves were successfuly supplied to Mrs. Mirgon and her students. Enabling a group of 6th graders to experience a fun and interesting lab, while learning in a safe environment. A sense of normalcy, even if for an hour, can make a world of difference during a difficult period of time.</p><br><p>Caps off to Mrs. Mirgon, and all the teachers going above and beyond for their students. We are proud to support them.</p><br>",
+      "button": {
+        "text": "Close",
+        "classes": "",
+        "link": "javascript:void(0)"
+      },
       "externalLinks": []
     }
   },
   {
-    "title": "Story 3",
+    "title": "Virtual Baked Sale Fundraiser",
     "image": {
-      "src": "assets/img/stories/painted-fundraiser.jpg",
-      "alt": "Tashia Cardec covered in paint with children",
+      "src": "assets/img/stories/bakesale-thanksgiving-fundraiser.jpg",
+      "alt": "Oh boy, Two Delicious Pies",
       "size": {
         "width": "",
         "height": ""
       }
     },
-    "description": "Getting covered in paint while putting the 'FUN' in Fundraiser",
+    "description": "Baked Sale Brings The Goods...Baked Goods",
     "button": {
       "text": "Read more",
       "classes": ""
     },
     "story": {
       "heroImage": "",
-      "body": "<p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p><p>Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore. Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>",
+      "body": "<p>It was that time of year, again. The season of giving to those who are in need. A Virtual Baked Sale to raise funds for the upcoming holiday stockings service was a great way to have a successful fundraiser while still dealing with a pandemic.</p><br><p>TLGYO managed to raise enough money, from online orders, to ensure that the holiday stockings would go out before Christmas. The results were dozens of stockings shipped to teens in need, as well as their siblings, if they had them, all across the U.S.</p><br><p>This was a very rewarding story, and there are so many people that deserve a resounding 'thank you' from TLGYO for all their help, online orders, and support</p><br>",
+      "button": {
+        "text": "Close",
+        "classes": "",
+        "link": "javascript:void(0)"
+      },
       "externalLinks": []
     }
   }

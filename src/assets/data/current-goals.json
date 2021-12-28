@@ -1,26 +1,28 @@
-[
-  {
-    "title": "Goal 1",
-    "value": 50,
-    "target": 100,
-    "unit": "%"
-  },
-  {
-    "title": "Goal 2",
-    "value": 60,
-    "target": 100,
-    "unit": "pcs"
-  },
-  {
-    "title": "Goal 3",
-    "value": 70,
-    "target": 100,
-    "unit": "$"
-  },
-  {
-    "title": "Goal 4",
-    "value": 80,
-    "target": 100,
-    "unit": "%"
-  }
-]
+[{
+  "target": 27,
+  "title": "Holiday Stockings",
+  "unit": "pcs",
+  "value": 27,
+  "percentage": 100
+},
+{
+  "target": 100,
+  "title": "PPE for Science Class",
+  "unit": " gloves",
+  "value": 100,
+  "percentage": 100
+},
+{
+  "target": 15,
+  "title": "Baked Sale Fundraiser",
+  "unit": " orders",
+  "value": 13,
+  "percentage": 87
+},
+{
+  "target": 37,
+  "title": "Holiday Stockings 2021",
+  "unit": "%",
+  "value": 37,
+  "percentage": 100
+}]

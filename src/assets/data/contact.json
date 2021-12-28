@@ -1,0 +1,33 @@
+[{
+  "name": "TLGYO.ORG",
+  "address": {
+    "full": "Hopewell OH, 43746",
+    "street": "",
+    "city": "Hopewell",
+    "state": {
+      "long": "Ohio",
+      "short": "OH"
+    },
+    "zipcode": "43746"
+  },
+  "phone": "740-586-0582",
+  "email": "hello@tlgyo.org",
+  "bussiness_hours": "Mon - Fri: 9AM to 5PM",
+  "socials": [
+    {
+      "name": "Facebook",
+      "icon": "bxl-facebook",
+      "href": "https://www.facebook.com/lookingglassyouthoutreach"
+    },
+    {
+      "name": "Instagram",
+      "icon": "bxl-instagram",
+      "href": "https://www.instagram.com/lookingglassyouthoutreach/"
+    },
+    {
+      "name": "LinkedIn",
+      "icon": "bxl-linkedin",
+      "href": "https://www.linkedin.com/in/tashia-cardec-a40b91b0/"
+    }
+  ]
+}]
