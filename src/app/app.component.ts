@@ -66,6 +66,10 @@ export class AppComponent implements OnInit {
     analytics.logEvent('Splash', new Date());
   }
 
+  triggerEvent(name: string, opts: any = null) {
+    this.analytics.logEvent(name, {date: new Date(), opts})
+  }
+
   showNewsletterModal(): void {
     this.isNewsletterModalShown = true;
   }
