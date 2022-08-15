@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="hero">
+<section id="hero" #carouselContainer>
   <div class="hero-container">
     <carousel [isAnimated]="true" id="heroCarousel" class="">
       <slide *ngFor="let slide of heroSlides; let i = index;">
@@ -12,30 +12,6 @@
           </div>
         </div>
       </slide>
-      <!-- <slide>
-        <div class="carousel-background"><img src="assets/img/slide/4-teens-sunset.jpg" alt=""></div>
-        <div class="carousel-container">
-          <div class="carousel-content">
-            <h2 class="animated fadeInDown" data-aos="fade-down">Welcome to <span>TLGYO</span></h2>
-            <p class="" data-aos="fade-up">Our Mission is to enrich the futures of our youth by providing a safe and nurturing
-              environment for them to grow and
-              develop</p>
-            <a href="#donation" class="btn-get-started scrollto" data-aos="fade-up">Donate now</a>
-          </div>
-        </div>
-      </slide>
-      <slide>
-        <div class="carousel-background"><img src="assets/img/slide/teens-facing-shore.jpg" alt=""></div>
-        <div class="carousel-container">
-          <div class="carousel-content">
-            <h2 class="animate__animated animate__fadeInDown">Lorem Ipsum Dolor</h2>
-            <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea
-              ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem.
-              Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-            <a href="#about" class="btn-get-started scrollto">Learn more</a>
-          </div>
-        </div>
-      </slide> -->
     </carousel>
 
   </div>
@@ -56,6 +32,7 @@
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About Us</a></li>
         <li><a class="nav-link scrollto" href="#programs">Programs</a></li>
+        <li><a class="nav-link scrollto" href="#events">Events</a></li>
         <li><a class="nav-link scrollto" href="#team">Team</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -91,7 +68,7 @@
 
       <div class="section-title">
         <h2 data-aos="fade-up">About Us</h2>
-        <p data-aos="fade-up">LGYO is a registered 501(c)3 non-profit organization, founded to help give any youth in need a bright future. Our main
+        <p data-aos="fade-up">TLGYO.ORG is a registered 501(c)3 non-profit organization, founded to help give any youth in need a bright future. Our main
         purpose is to assist at-risk teenagers in achieving their full potential. We work to do this by providing them
         with an opportunity to develop skills that will help them live healthier lives while developing the tools they need
         to be productive and successful members of society.
@@ -212,6 +189,31 @@
     </div>
   </section><!-- End More Services Section -->
 
+   <!-- ======= Upcoming Events Section ======= -->
+   <section id="events" class="more-services section-bg">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-aos="fade-up">Upcoming Events</h2>
+        <p data-aos="fade-up">A list of TLGYO.ORG upcoming events. For updates and event reminders be sure to subscribe to the TLGYO.ORG newsletter.</p>
+      </div>
+      <div class="row">
+        <h4 *ngIf="!events.length">There are no upcoming events at this time. Please check back later.</h4>
+        <div *ngFor="let event of events; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
+          <div class="card">
+            <img [src]="event.image.src" class="card-img-top" [alt]="event.image.alt">
+            <div class="card-body">
+              <h5 class="card-title" data-aos="fade-up"><a href="javascript:void(0)">{{event.title}}</a></h5>
+              <p>Date: {{event.date}}</p>
+              <p class="card-text" data-aos="fade-up">{{event.details}}</p>
+              <!-- <button data-aos="fade-up" *ngIf="event.button" class="btn" [ngClass]="event.button.classes" (click)="openStoryModal(storyTemplate, i)">{{story?.button?.text}}</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End Upcoming Events Section -->
+
   <!-- ======= Info Box Section ======= -->
   <section class="info-box py-0">
     <div class="container-fluid">
@@ -253,7 +255,8 @@
 
       <div class="section-title">
         <h2 data-aos="fade-up">Donate and make a direct impact</h2>
-        <p data-aos="fade-up">Giving even a small amount goes a long way. Your entire donation is allocated to enable TLGYO programs and services, to the benefit of teenagers in need of help. Your contribution could get supplies for teachers to improve their students educational experiences, or shipping costs to deliver Christmas stockings to children who would otherwise see very little, or nothing at all, this holiday season. Donate today and help us make a difference.</p>
+        <p data-aos="fade-up">Giving even a small amount goes a long way. Your entire donation is allocated to enable TLGYO programs and services, to the benefit of teenagers in need of help. Your contribution could get supplies for teachers to improve their students educational experiences, or shipping costs to deliver Christmas stockings to children who would otherwise see very little, or nothing at all, this holiday season. Donate today and help us make a difference. All donations to TLGYO.ORG are tax deductible.</p>
+        <p data-aos="fade-up">Tax Id: <b>{{contactInfo?.taxId}}</b></p>
       </div>
 
       <div class="row justify-content-center mb-5" data-aos="fade-up">
@@ -403,6 +406,7 @@
 
         <div class="col-lg-3 col-md-6 footer-info">
           <h3>{{contactInfo?.name}}</h3>
+          <p>A 501(c)3 Organization<br>Tax Id: <b>{{contactInfo?.taxId}}</b></p>
           <p>
             {{contactInfo?.address?.full}}<br><br>
             <strong>Phone:</strong> +1 {{contactInfo?.phone}}<br>
@@ -423,8 +427,8 @@
             <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#aboutus">About us</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#programs">Programs</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="https://www.termsandconditionsgenerator.com/live.php?token=IRYpUBlh8B5sRkJ2DrRiXyusCwXLikRm" target="_blank">Terms of service</a></li>
+            <li><i class="bx bx-chevron-right"></i> <a href="https://www.generateprivacypolicy.com/live.php?token=7H84yyuiwEjzOfIeHeIs65fTYhoM1EJ1" target="_blank">Privacy policy</a></li>
           </ul>
         </div>
 

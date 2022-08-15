@@ -1,7 +1,15 @@
-[{
+[
+  {
+    "target": 100,
+    "title": "Supply Drive",
+    "unit": " Students Helped",
+    "value": 30,
+    "percentage": 30
+  },
+  {
   "target": 27,
   "title": "Holiday Stockings",
-  "unit": "pcs",
+  "unit": " pcs",
   "value": 27,
   "percentage": 100
 },
@@ -22,7 +30,7 @@
 {
   "target": 37,
   "title": "Holiday Stockings 2021",
-  "unit": "%",
+  "unit": " Stockings",
   "value": 37,
   "percentage": 100
 }]

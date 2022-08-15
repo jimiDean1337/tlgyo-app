@@ -1,7 +1,6 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
 import { AngularFireAnalytics } from '@angular/fire/compat/analytics';
@@ -30,7 +29,7 @@ export class AppComponent implements OnInit {
   selectedProgram: Program = {};
   isNewsletterModalShown = false;
 
-  title = 'tlgyo-app';
+  title = 'TLGYO.ORG';
   alertConfig = {
     type: 'success',
     msg: '',
@@ -56,6 +55,7 @@ export class AppComponent implements OnInit {
   selectedStory: any;
   selectedFAQId: number = 0;
   contactInfo: any;
+  events: any;
 
   constructor(
     private modalService: BsModalService,
@@ -89,6 +89,10 @@ export class AppComponent implements OnInit {
 
   openStoryModal(template: TemplateRef<any>, selectedStory: number = 0, modalOpts: ModalOptions = { class: 'modal-xl' }) {
     this.selectedStory = this.stories[selectedStory];
+    this.modalRef = this.modalService.show(template, modalOpts);
+  }
+
+  openModal(template: TemplateRef<any>, modalOpts?: ModalOptions) {
     this.modalRef = this.modalService.show(template, modalOpts);
   }
 
@@ -157,6 +161,10 @@ export class AppComponent implements OnInit {
 
   private get Stories() {
     return this.db.list('stories');
+  }
+
+  private get Events() {
+    return this.db.list('events');
   }
 
   private get Team() {
@@ -245,6 +253,14 @@ export class AppComponent implements OnInit {
       this.stories = stories;
       console.log("GET Stories", stories)
     })
+
+      /**
+ * Events Database
+ */
+       this.Events.valueChanges().subscribe(stories => {
+        this.events = stories;
+        console.log("GET Stories", stories)
+      })
 
     /**
   * CTA Database

@@ -1,0 +1,362 @@
+{
+  "call-to-action": {
+    "background": "assets/img/cta-bg.jpg",
+    "button": {
+      "classes": "text-center",
+      "link": "https://checkout.square.site/merchant/MLVHAV28WTS90/checkout/R5G6HXPJET7AQ7JJJ3FUUKHB",
+      "text": "Donate today"
+    },
+    "details": "A small gift of a donation can make a big difference in the life of a teenager in need.",
+    "show": true,
+    "title": "A Gift Of Hope"
+  },
+  "contact": {
+    "address": {
+      "city": "Hopewell",
+      "full": "Hopewell OH, 43746",
+      "state": {
+        "long": "Ohio",
+        "short": "OH"
+      },
+      "street": "",
+      "zipcode": "43746"
+    },
+    "business_hours": "Mon - Fri: 9AM to 5PM",
+    "email": "hello@tlgyo.org",
+    "logo": {
+      "alt": "TLGYO.ORG | Through The Looking Glass Youth Outreach Logo",
+      "dark": {
+        "alt": "TLGYO.ORG | Through The Looking Glass Youth Outreach Logo",
+        "src": "assets/img/logo/tlgyo-logo-teal-transparent-long_final.png"
+      },
+      "full": {
+        "dark": {
+          "alt": "TLGYO.ORG | Through The Looking Glass Youth Outreach Logo",
+          "src": "assets/img/logo/tlgyo-logo-teal-transparent-full_final.png"
+        },
+        "light": {
+          "alt": "TLGYO.ORG Through The Looking Glass Youth Outreach Logo",
+          "src": "assets/img/logo/tlgyo-logo-white-transparent-full_final.png"
+        }
+      },
+      "small": {
+        "dark": {
+          "alt": "TLGYO.ORG Through The Looking Glass Youth Outreach Logo",
+          "src": "assets/img/logo/tlgyo-logo-teal-transparent-small_final.png"
+        },
+        "light": {
+          "alt": "TLGYO.ORG | Through The Looking Glass Youth Outreach Logo",
+          "src": "assets/img/logo/tlgyo-logo-white-transparent-small_final.png"
+        }
+      },
+      "src": "assets/img/logo/tlgyo-logo-white-transparent-long_final.png"
+    },
+    "name": "TLGYO.ORG",
+    "phone": "740-586-0582",
+    "socials": [
+      {
+        "href": "https://www.facebook.com/lookingglassyouthoutreach",
+        "icon": "bxl-facebook",
+        "name": "Facebook"
+      },
+      {
+        "href": "https://www.instagram.com/lookingglassyouthoutreach/",
+        "icon": "bxl-instagram",
+        "name": "Instagram"
+      },
+      {
+        "href": "https://www.linkedin.com/in/tashia-cardec-a40b91b0/",
+        "icon": "bxl-linkedin",
+        "name": "LinkedIn"
+      }
+    ],
+    "taxId": "85-2438279"
+  },
+  "current-counts": [
+    {
+      "count": 50,
+      "details": "<p><strong>Children</strong> provided with essential classroom supplies, to aid in their education</p>",
+      "icon": "bi-book-half",
+      "link": "donations"
+    },
+    {
+      "count": 37,
+      "details": "<p><strong>Stockings</strong> sent to teens in-need across the U.S. this holiday season</p>",
+      "icon": "bi-gift",
+      "link": "donations"
+    },
+    {
+      "count": 365,
+      "details": "<p><strong>Consecutive Days</strong> helping at-risk teenagers realize their amazing potential</p>",
+      "icon": "bi-calendar2-check",
+      "link": "donations"
+    },
+    {
+      "count": 50,
+      "details": "<p><strong>States</strong> in the U.S. with children in need that we can help with your support</p>",
+      "icon": "bi-map",
+      "link": "donations"
+    }
+  ],
+  "current-goals": [
+    {
+      "percentage": 100,
+      "target": 27,
+      "title": "Holiday Stockings",
+      "unit": " pcs",
+      "value": 27
+    },
+    {
+      "percentage": 100,
+      "target": 100,
+      "title": "PPE for Science Class",
+      "unit": " gloves",
+      "value": 100
+    },
+    {
+      "percentage": 87,
+      "target": 15,
+      "title": "Baked Sale Fundraiser",
+      "unit": " orders",
+      "value": 13
+    },
+    {
+      "percentage": 100,
+      "target": 37,
+      "title": "Holiday Stockings 2021",
+      "unit": " pcs",
+      "value": 37
+    }
+  ],
+  "faq-list": [
+    {
+      "body": "<p>There are many ways to help: <br> A direct donation to TLGYO.ORG helps keep our programs and services running. Donations can be made <a href=\"https://checkout.square.site/merchant/MLVHAV28WTS90/checkout/R5G6HXPJET7AQ7JJJ3FUUKHB\">here</a><br>You can participate in our Teen Sponsorship Program to mentor a teenager. Learn more <a href=\"#programs\">here</a><br>Contact TLGYO.ORG <a href=\"mailto:hello@tlgyo.org\" subject=\"How can I help\">here</a> to get more information about how you can support our mission to help teenagers in need.</p>",
+      "id": "01",
+      "title": "How can I contribute to helping at-risk teenagers?"
+    },
+    {
+      "body": "<p><div class=\"list-group\"><a href=\"https://www.aa-intergroup.org\" class=\"list-group-item list-group-item-action\" target=\"_blank\">Alcoholics Anonymous – Online Intergroup</a><a href=\"https://communityincrisis.org/programs/all-recovery-support/\" class=\"list-group-item list-group-item-action\" target=\"_blank\">All Recovery Online – Online Recovery Meeting</a><a href=\"https://www.ca-online.org/\" class=\"list-group-item list-group-item-action\" target=\"_blank\">Cocaine Anonymous – Online Meetings</a><a href=\"https://herrenproject.org/online-support-groups/\" class=\"list-group-item list-group-item-action\" target=\"_blank\">Herren Project – Online Support Groups for people with SUD and family members</a><a href=\"https://www.intherooms.com/home/live-meetings/\" class=\"list-group-item list-group-item-action\" target=\"_blank\">In the Rooms – Live Video Meetings</a><a href=\"https://www.lifering.org/online-meetings\" class=\"list-group-item list-group-item-action\" target=\"_blank\">LifeRing – Online Meetings</a><a href=\"https://www.moderation.org/\" class=\"list-group-item list-group-item-action\" target=\"_blank\">Modernation Management – Online Meetings</a><a href=\"https://virtual-na.org/\" class=\"list-group-item list-group-item-action\" target=\"_blank\">Narcotics Anonymous – Meetings Online & by Phone</a></div></p>",
+      "id": "02",
+      "title": "Are there any helpful online resources?"
+    },
+    {
+      "body": "<p>TLGYO Core Programs are for 12-17 year olds, and other services can be made available for younger chidren on a case-by-case basis.</p>",
+      "id": "03",
+      "title": "Are TLGYO Programs & Services only available for ages 12-17?"
+    },
+    {
+      "body": "<p>Absolutely. TLGYO Programs & Services are available to any teenager in need.</p>",
+      "id": "04",
+      "title": "Are TLGYO Programs & Services open to LGBTQ+ teenagers?"
+    },
+    {
+      "body": "<p>Call the National Suicide Prevention Lifeline: <b>800-273-8255</b></p><p>You can call anytime, they are available 24 hours a day, with over 161 crisis call centers filled with compassionate people ready to listen and provide support to anyone who is in crisis.</p>",
+      "id": "04",
+      "title": "Are you, or someone you know struggling with thoughts of suicide"
+    }
+  ],
+  "hero-slides": [
+    {
+      "alt": "Youth watching the sunset",
+      "button": {
+        "link": "#donation",
+        "text": "Donate now"
+      },
+      "src": "4-teens-sunset.jpg",
+      "subtitle": "Through The Looking Glass Youth Outreach - Enriching the futures of our youth by providing a safe and nurturing environment for them to grow and develop",
+      "title": "Welcome To TLGYO.ORG"
+    },
+    {
+      "alt": "Youth on the beach",
+      "button": {
+        "link": "#programs",
+        "text": "Learn more"
+      },
+      "src": "teens-facing-shore.jpg",
+      "subtitle": "Through The Looking Glass Youth Outreach provides the tools and the environment at-risk youth require to succeed in the world",
+      "title": "Providing Opportunities to Grow"
+    }
+  ],
+  "programs": [
+    {
+      "body": "<h2 class=\"mb-3\"><strong>What is COPE?</strong></h2><p>The <b>COPE Programs</b> are focused on a skills-building method based on Cognitive Behavioral Therapy, which involves lowering negative or unhelpful ideas, boosting healthy behaviors, and enhancing communication and problem-solving abilities.</p><br><p>The brain puts down new pathways when people learn to COPE in good ways, allowing them to establish new neural connections and deal with stress, anxiety, and depressive symptoms in healthy ways.</p><br><p>Individuals' attitudes and behaviors automatically follow suit when they are assisted in changing their negative beliefs to good ones. Convincing children, teenagers, and young adults that they can achieve whatever is essential to them reinforces what their minds believe they can. COPE assists people in confronting their concerns and gaining emotional mastery.</p><br><p>Children, teenagers, and young adults in the United States are currently not receiving the mental health treatment they require. Many people are on long waiting lists, and just around half of them receive any assistance. According to recent studies, at least 5% of children and 9-20% of all adolescents suffer from depression, with the likelihood increasing if their parents also suffer from depression. These figures are even higher among minorities. Depression and anxiety rates have increased since the COVID-19 pandemic. Since the pandemic began, one out of every seven parents has stated their children's mental health has deteriorated.</p><br><p>With these statistics in mind, it's evident that providing timely, evidence-based prevention and treatment for depressive and anxious adolescents, teens, and young adults is critical. The COPE Programs were created to address this issue. COPE recognizes the needs of young people and provides educational and skill-building opportunities to help them avoid and manage bad situations.</p><br><p>The evidence-based COPE Programs express that there is hope for change and that both depression and anxiety are curable through a series of brief, easy-to-follow sessions packed with skills-building activities.</p><br><p>We can't control trigger events, but we can manage how we respond to them, according to COPE. The COPE Program teaches children, teenagers, and young adults how to notice and interrupt habitual negative or unhelpful ideas and replace them with positive ones for less than the cost of one therapy appointment. As a consequence, you'll feel more emotionally stable and behave in more healthful ways.</p><br><p>COPE has been successfully implemented in primary care offices, mental health clinics, counseling offices, K-12 schools, and colleges. The programs may be delivered in a variety of formats, including individual, group, and classroom settings, as well as via telehealth. The evidence-based COPE Programs have been demonstrated in several studies* to reduce depressed and anxiety symptoms, as well as increase self-concept, academic achievement, and healthy habits.</p><br>",
+      "description": "A cognitive behavioral therapy program that helps teach teens the skills they need to feel and act in a positive way",
+      "icon": "bx-analyse",
+      "images": [
+        {
+          "src": "../assets/img/programs/COPE-logo-final.png",
+          "type": "logo"
+        }
+      ],
+      "link": "https://cope2thrive.com",
+      "title": "COPE Program"
+    },
+    {
+      "body": "<p>It is critical that children and young adults have positive role-models in their life. Someone that will reenforce good habits, in a healthy environment. Teen Sponsorship offers that and more.</p><br><p>TLGYO finds a potential sponsor to pair with a child who meets the criteria for the program. An initial meeting takes place to ensure the sponsor and the sponsee are a good fit, followed by subsequent meetings at times that are convienient for both individuals.</p><br><p>Some of the requirements that need to be met in order to become a teen sponsor include, but are not limited to: living in the same area, as well as being able to relate to the sponsored teenager through life experience, education, or by other means. The sponsorship is similar to the sponsors used in N.A. (Narcotics Anonymous) and A.A. (Alcoholics Anonymous).</p><br><p>If you feel that the Teen Sponsorship Program is a good fit for your teenager, or you know someone who would benefit from the program, please contact TLGYO by filling out the <a href=\"#contact\">Contact Form</a> or email <a href=\"mailto:hello@tlgyo.org\" subject=\"Teen Sponsorship\" body=\"I am interested in learning more about the Teen Sposnorship Program\">TLGYO.ORG</a> to get more information.</p><br>",
+      "dataType": "sponsors",
+      "description": "Helping to provide teens in need with the required tools to be successful.",
+      "icon": "bx-compass",
+      "images": [
+        {
+          "src": "../assets/img/programs/COPE-logo-final.png",
+          "type": "logo"
+        }
+      ],
+      "link": "mailto:hello@tlgyo.org",
+      "title": "Teen Sponsorship"
+    },
+    {
+      "body": "<p>Teachers play several crucial roles in our children's development. They act as role-models, educators, counselers, and even protectors. However, their salaries, and budgets don't reflect their importance. Too often it is left up to the teacher to provide essential classroom supplies, paying the expenses out of their own pockets. TLGYO aims to remedy this.</p><br><p>Every month, TLGYO will assist with the nominated teachers' requested supplies, by purchasing items from an approved list, for use in their classroom. Our childrens' education is far too important, and when their classroom experience is lacking, it has a direct effect on many other aspects of their lives.</p><br><p>If you are a teacher and would like to be nominated for sponsorship, or if you know a teacher and want to nominate them for our Teacher Sponsorship Program, fill out the <a href=\"#contact\">Contact Form</a> with the subject <b>'Teacher Sponsership Program'</b> and explain who needs help, and what items are needed. Alternativly, you can email <a href=\"mailto:hello@tlgyo.org\" subject=\"Teen Sponsorship\" body=\"I would like to learn more about the Teacher Sposnorship Program\">TLGYO</a> directly, to submit a nomination.</p><br>",
+      "dataType": "nominations",
+      "description": "Every month TLGYO will assist nominated teachers with supplies and other required items for their classroom, giving their students a better educational experience.",
+      "icon": "bx-book",
+      "images": [
+        {
+          "src": "../assets/img/programs/COPE-logo-final.png",
+          "type": "logo"
+        }
+      ],
+      "link": "mailto:hello@tlgyo.org",
+      "title": "Teacher Sponsership"
+    }
+  ],
+  "stories": [
+    {
+      "button": {
+        "classes": "",
+        "text": "Read more"
+      },
+      "description": "Putting some paint covered 'FUN' in Fundraiser",
+      "image": {
+        "alt": "Tashia Cardec covered in paint with children",
+        "size": {
+          "height": "",
+          "width": ""
+        },
+        "src": "assets/img/stories/painted-fundraiser.jpg"
+      },
+      "story": {
+        "body": "<p>It all started with a bet. TLGYO Exec. Director, Tashia Cardec, was challenged by several of the local youth. The challenge was that if TLGYO reached a set fundraising goal, Tashia would allow herself to be 'paint ballooned' by the young challengers.</p><br><p>We are more than proud to announce that once the word got out that if a dollar amount was reached, a certain Youth Outreach Director would face a colorful firing squad equipped with an array of colorful balloons, the goal was met, and rather quickly, we might add.</p><br><p>The action came on a chilly November day, Tashia faced the music. A barrage of multi-colored balloons were hurled her way, resulting in her bright white clothing being covered in bright, wet paint.</p><br><p>The children had a lot of fun, and it was only made better knowing that the funds raised would be used for holiday stockings to be sent to dozens of teens in need. Now that's what we call a 'WIN WIN WIN'!</p><br>",
+        "button": {
+          "classes": "",
+          "link": "javascript:void(0)",
+          "text": "Close"
+        },
+        "heroImage": ""
+      },
+      "title": "Putting The 'FUN' in Fundraiser"
+    },
+    {
+      "button": {
+        "classes": "",
+        "text": "Read more"
+      },
+      "description": "Science Teacher Fins An Ally In TLGYO",
+      "image": {
+        "alt": "Mrs. Mirgons' Science Lab",
+        "size": {
+          "height": "",
+          "width": ""
+        },
+        "src": "assets/img/stories/west-muskingum-middle-school.jpg"
+      },
+      "story": {
+        "body": "<p>The COVID-19 pandemic has left none unscathed or uneffected. Not to mention the isolation, and anxiousness felt by the students at West Muskingum Middle School. At this particular middle school, 6th grade science teacher, Mrs. Migson, was struggling to find a way for her students to participate in a mineral lab due to a lack of PPE (Personal Protective Equipement) that was needed to protect students from COVID. Queue TLGYO and The Teacher Sponsorship Program.</p><br><p>After visiting several local SuperMarkets, more than 100 pairs of Nitrile gloves were successfuly supplied to Mrs. Mirgon and her students. Enabling a group of 6th graders to experience a fun and interesting lab, while learning in a safe environment. A sense of normalcy, even if for an hour, can make a world of difference during a difficult period of time.</p><br><p>Caps off to Mrs. Mirgon, and all the teachers going above and beyond for their students. We are proud to support them.</p><br>",
+        "button": {
+          "classes": "",
+          "link": "javascript:void(0)",
+          "text": "Close"
+        },
+        "heroImage": ""
+      },
+      "title": "West Muskingum Middle School"
+    },
+    {
+      "button": {
+        "classes": "",
+        "text": "Read more"
+      },
+      "description": "Baked Sale Brings The Goods...Baked Goods",
+      "image": {
+        "alt": "Oh boy, Two Delicious Pies",
+        "size": {
+          "height": "",
+          "width": ""
+        },
+        "src": "assets/img/stories/bakesale-thanksgiving-fundraiser.jpg"
+      },
+      "story": {
+        "body": "<p>It was that time of year, again. The season of giving to those who are in need. A Virtual Baked Sale to raise funds for the upcoming holiday stockings service was a great way to have a successful fundraiser while still dealing with a pandemic.</p><br><p>TLGYO managed to raise enough money, from online orders, to ensure that the holiday stockings would go out before Christmas. The results were dozens of stockings shipped to teens in need, as well as their siblings, if they had them, all across the U.S.</p><br><p>This was a very rewarding story, and there are so many people that deserve a resounding 'thank you' from TLGYO for all their help, online orders, and support</p><br>",
+        "button": {
+          "classes": "",
+          "link": "javascript:void(0)",
+          "text": "Close"
+        },
+        "heroImage": ""
+      },
+      "title": "Virtual Baked Sale Fundraiser"
+    }
+  ],
+  "team": [
+    {
+      "image": {
+        "alt": "Tashia Cardec Executive Director",
+        "src": "assets/img/team/Tashia_Cardec.jpg"
+      },
+      "name": "Tashia Cardec",
+      "socials": [
+        {
+          "href": "",
+          "icon": "bi-facebook",
+          "name": "Facebook"
+        },
+        {
+          "href": "",
+          "icon": "bi-twitter",
+          "name": "Twitter"
+        },
+        {
+          "href": "",
+          "icon": "bi-instagram",
+          "name": "Instagram"
+        },
+        {
+          "href": "",
+          "icon": "bi-linkedin",
+          "name": "LinkedIn"
+        }
+      ],
+      "title": "Founder / Executive Director"
+    },
+    {
+      "image": {
+        "alt": "Tai Loughman Office Manager",
+        "src": "assets/img/team/Tai_Loughman.jpg"
+      },
+      "name": "Tai Loughman",
+      "socials": [
+        {
+          "href": "",
+          "icon": "bi-facebook",
+          "name": "Facebook"
+        },
+        {
+          "href": "",
+          "icon": "bi-twitter",
+          "name": "Twitter"
+        },
+        {
+          "href": "",
+          "icon": "bi-instagram",
+          "name": "Instagram"
+        },
+        {
+          "href": "",
+          "icon": "bi-linkedin",
+          "name": "LinkedIn"
+        }
+      ],
+      "title": "Office Manager"
+    }
+  ]
+}

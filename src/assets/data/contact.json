@@ -12,7 +12,8 @@
   },
   "phone": "740-586-0582",
   "email": "hello@tlgyo.org",
-  "bussiness_hours": "Mon - Fri: 9AM to 5PM",
+  "business_hours": "Mon - Fri: 9AM to 5PM",
+  "taxId": "85-2438279",
   "socials": [
     {
       "name": "Facebook",

@@ -550,6 +550,20 @@ h6 {
     width: 60%;
   }
 
+  .hero-container {
+    #heroCarousel {
+      .carousel {
+        .carousel-inner .carousel-item .item {
+          .carousel-background {
+            img {
+              width: 100% !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
   #hero .carousel-control-prev,
   #hero .carousel-control-next {
     width: 5%;
@@ -1038,6 +1052,18 @@ section {
   }
 }
 
+/*--------------------------------------------------------------
+# Donations
+--------------------------------------------------------------*/
+#donation {
+  .donation-container {
+    .list-group {
+      .list-group-item {
+        border: none !important;
+      }
+    }
+  }
+}
 /*--------------------------------------------------------------
 # Our Portfolio
 --------------------------------------------------------------*/
@@ -1639,7 +1665,7 @@ section {
   top: 30% !important;
 
   .modal-body {
-    background: #c3ffca url("../assets/img/paper-planes-bg.png") no-repeat !important;
+    background: linear-gradient(45deg, $primary, #fff) !important;
     background-size: 100%;
     border-bottom-left-radius: calc(0.3rem - 1px) !important;
     border-bottom-right-radius: calc(0.3rem - 1px) !important;
