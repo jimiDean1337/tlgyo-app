@@ -33,6 +33,7 @@
         <li><a class="nav-link scrollto" href="#about">About Us</a></li>
         <li><a class="nav-link scrollto" href="#programs">Programs</a></li>
         <li><a class="nav-link scrollto" href="#events">Events</a></li>
+        <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
         <li><a class="nav-link scrollto" href="#team">Team</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -114,7 +115,6 @@
   <!-- ======= Counts Section ======= -->
   <section class="counts section-bg">
     <div class="container">
-
       <div class="row no-gutters">
         <div *ngFor="let count of currentCounts; let i = index;" class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
           <div class="count-box" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
@@ -197,7 +197,7 @@
         <p data-aos="fade-up">A list of TLGYO.ORG upcoming events. For updates and event reminders be sure to subscribe to the TLGYO.ORG newsletter.</p>
       </div>
       <div class="row">
-        <h4 *ngIf="!events.length">There are no upcoming events at this time. Please check back later.</h4>
+        <h4 *ngIf="!events?.length">There are no upcoming events at this time. Please check back later.</h4>
         <div *ngFor="let event of events; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
           <div class="card">
             <img [src]="event.image.src" class="card-img-top" [alt]="event.image.alt">
@@ -215,7 +215,7 @@
   </section><!-- End Upcoming Events Section -->
 
   <!-- ======= Info Box Section ======= -->
-  <section class="info-box py-0">
+  <section id="faq" class="info-box py-0">
     <div class="container-fluid">
 
       <div class="row">
@@ -263,7 +263,7 @@
         <a href="https://checkout.square.site/merchant/MLVHAV28WTS90/checkout/R5G6HXPJET7AQ7JJJ3FUUKHB" target="_blank" class="col-lg-3 col-md-6 btn btn-primary" style="max-width: 60vw;">Make a donation</a>
       </div>
       <div class="row donation-container">
-        <div class="card" data-aos="fade-up">
+        <div class="card col-lg-6 offset-lg-3 col-12" data-aos="fade-up">
           <div class="card-body">
             <h5 class="card-title">Financial Donations Allocated</h5>
             <ul class="list-group">
@@ -288,7 +288,25 @@
 
     </div>
   </section>
-  <!-- End Our Portfolio Section -->
+  <!-- End Donation Section -->
+
+  <!-- ======= Donors Section ======= -->
+  <section id="donors" class="donors section-bg">
+    <div class="section-title">
+      <h2 data-aos="fade-up">Donor Recognition</h2>
+      <p data-aos="fade-up">A sincere thank you to these donors whose contributions have allowed TLGYO.ORG to continue helping teenagers get every opportunity they deserve.</p>
+    </div>
+    <div class="container">
+      <div class="row donators-container justify-content-center mb-5" data-aos="fade-up">
+        <div *ngFor="let item of donators" class="col-md-4">
+          <div class="card">
+            <div class="card-body"><h3 class="text-center"><i class="bx bx-donate-heart text-primary"></i>&nbsp;<b>{{item.name}}</b></h3></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Donors Section -->
 
   <!-- ======= Our Team Section ======= -->
   <section id="team" class="team">
@@ -319,6 +337,28 @@
 
     </div>
   </section><!-- End Our Team Section -->
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="section-title">
+      <h2 data-aos="fade-up">Testimonials</h2>
+      <p data-aos="fade-up">Experiences shared by those who have been helped or impacted by what TLGYO.ORG does for at risk youth.</p>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center mb-5">
+        <div *ngFor="let item of testimonials" class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="text-center">{{item.name}}</h3>
+              <h5 class="text-center">{{item.title}}</h5>
+              <hr>
+              <div class="px-3" [innerHTML]="item.html"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ======= Contact Us Section ======= -->
   <section id="contact" class="contact section-bg">
@@ -387,7 +427,7 @@
               <div class="error-message"></div>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div> -->
-            <div class="text-center mt-3"><button type="button" (click)="addContact(contactModel, contactForm)">Send Message</button></div>
+            <div class="text-center mt-3"><button type="button" (click)="addContact(contactModel, contactForm)" [disabled]="contactForm?.errors?.invalid">Send Message</button></div>
           </form>
         </div>
 
@@ -487,13 +527,13 @@
   <div class="modal-dialog modal-md">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 id="dialog-auto-newsletter" class="modal-title pull-left">TLGYO Newsletter</h4>
+        <h4 id="dialog-auto-newsletter" class="modal-title pull-left">TLGYO.ORG Newsletter</h4>
         <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="hideNewsletterModal()">
           <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        Subscribe to get updates on TLGYO news, upcoming events, fundraisers, volunteer oportunities, and much more. Direct to your inbox, once a month. 100% Spam-free.
+        Subscribe to get updates on TLGYO.ORG news, upcoming events, fundraisers, volunteer oportunities, and much more. Direct to your inbox, once a month. 100% Spam-free.
         <form #subscribeForm="ngForm">
           <div class="form-group">
             <input [(ngModel)]="subscriberModel.name" #subName="ngModel" type="text" class="form-control" name="subName" id="subName" aria-describedby="subName" placeholder="Name">
@@ -501,8 +541,10 @@
           <div class="form-group">
             <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email" placeholder="Email">
           </div>
-          <span class="text-muted">We respect your privacy</span>
-          <button type="button" class="btn btn-get-started float-end mt-2" (click)="addSubscriber(subscriberModel, subscribeForm); hideNewsletterModal();">SUBSCRIBE</button>
+          <div class="d-flex align-items-end justify-content-start">
+            <span class="text-muted col-7">We won't share your data</span>
+          <button type="button" class="col-4 btn btn-get-started float-end mt-2" (click)="addSubscriber(subscriberModel, subscribeForm); hideNewsletterModal();">SUBSCRIBE</button>
+          </div>
         </form>
       </div>
     </div>

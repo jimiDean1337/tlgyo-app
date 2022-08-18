@@ -9,6 +9,7 @@ import {CountUp, CountUpOptions} from 'countup.js';
 import { CarouselConfig } from 'ngx-bootstrap/carousel';
 import * as Aos from 'aos';
 import { Program } from './interfaces/program';
+import { ObjectUnsubscribedError } from 'rxjs';
 declare const Waypoint: any;
 // import { AlertComponent, AlertModule } from 'ngx-bootstrap/alert';
 
@@ -42,6 +43,11 @@ export class AppComponent implements OnInit {
     startVal: 0,
   }
 
+  testimonialsCarouselConfig: any = {
+    itemsPerSlide: 3,
+    singleSlideOffset: true,
+  }
+
   subscriberModel: any = {};
   contactModel: any = {};
   programList: any;
@@ -56,6 +62,8 @@ export class AppComponent implements OnInit {
   selectedFAQId: number = 0;
   contactInfo: any;
   events: any;
+  testimonials: any;
+  donators: any;
 
   constructor(
     private modalService: BsModalService,
@@ -101,12 +109,12 @@ export class AppComponent implements OnInit {
   }
 
   addSubscriber(data: any, form?: NgForm) {
-    const { name, email } = data;
     // console.log("Subscriber Form: ", form)
+    if (!this.validateEmail(data.email)) return;
     const subscriber = {
       timestamp: new Date(),
-      name: name.toUpperCase(),
-      email
+      name: this.escapeRegExp(data.name),
+      email: data.email,
     }
     this.alertConfig.type = 'success';
     this.alertConfig.msg = 'Oh Yeah! You\'re officially signed up to updates!';
@@ -117,11 +125,16 @@ export class AppComponent implements OnInit {
   }
 
   addContact(data: any, form?: NgForm) {
-    const { name, email, subject, msg } = data;
+    if (!this.validateEmail(data.email)) return;
+    // TODO: Create Display messages for validation and sanitization errors
     const contact = {
       timestamp: new Date(),
-      name, email, subject, msg
+      name: this.escapeRegExp(data.name),
+      subject: this.escapeRegExp(data.subject),
+      msg: this.escapeRegExp(data.msg),
+      email: data.email,
     }
+    console.log('Contact form flow', contact)
     this.alertConfig.type = 'success';
     this.alertConfig.msg = 'OK! Your message has been sent!';
     this.alertConfig.show = true;
@@ -173,6 +186,23 @@ export class AppComponent implements OnInit {
 
   private get ContactInfo() {
     return this.db.object('contact');
+  }
+
+  private get Testimonials() {
+    return this.db.list('testimonials');
+  }
+
+  private get Donators() {
+    return this.db.list('donators');
+  }
+
+  private validateEmail(email: string) {
+    return email.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+  }
+
+  private escapeRegExp(input: any) {
+    const source = typeof input === 'string' || input instanceof String ? input : '';
+    return source.replace(/[-[/\]{}()*+?.,\\^$|#\s]/g, '\\$&');
   }
 
   ngOnInit() {
@@ -269,6 +299,23 @@ export class AppComponent implements OnInit {
       this.callToAction = cta;
       console.log("GET CTA", cta)
     })
+
+     /**
+  * Testimonials Database
+  */
+      this.Testimonials.valueChanges().subscribe(testimonials => {
+        this.testimonials = testimonials;
+        console.log("GET Testimonials", testimonials)
+      })
+
+
+     /**
+  * Donators Database
+  */
+      this.Donators.valueChanges().subscribe(donators => {
+        this.donators = donators;
+        console.log("GET Donators", donators)
+      })
 
     /**
    * Easy selector helper function
