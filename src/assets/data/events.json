@@ -1,29 +1,11 @@
-[
-  {
-    "title": "Newark Strawberry Festival",
-    "date": "June 3-5, 2022",
+{
+  "0": {
+    "date": "ENDED Aug 20, 2022",
+    "details": "TLGYO.ORG has launched a Back2School Supply Drive to assist anyone in need of help to get school supplies. If you or someone you know needs help, simply send your contact information along with a list of the supplies that are needed to supplies@tlgyo.org.",
     "image": {
-      "src": "http://nebula.wsimg.com/df1db629b519e467bb264737ce318d3f?AccessKeyId=DFABE574FCD9406F631B&disposition=0&alloworigin=1",
-      "alt": "Newark Strawberry Festival"
+      "alt": "Back2School Supply Drive",
+      "src": "https://event.gives/elegance/image/Back2School.jpg"
     },
-    "details": "TLGYO.ORG will be attending the festival in an unofficial capicity. TLGYO.ORG volunteers will be providing literature and other helpful program information. Event signup for future events will be available, and TLGYO.ORG will be accepting donations, and other contributions while at this event. For more ianformation email us at hello@tlgyo.org."
-  },
-  {
-    "title": "Columbus Pride Festival",
-    "date": "June 17-18, 2022",
-    "image": {
-      "src": "https://cdn.columbusunderground.com/wp-content/uploads/2022/02/pride-2017-12-696x464.jpeg",
-      "alt": "Columbus Pride Festival"
-    },
-    "details": "TLGYO.ORG will be attending the festival in an unofficial capicity. TLGYO.ORG volunteers will be providing literature and other helpful program information. Event signup for future events will be available, and TLGYO.ORG will be accepting donations, and other contributions while at this event. For more ianformation email us at hello@tlgyo.org."
-  },
-  {
-    "title": "Columbus Community Festival",
-    "date": "June 25-27, 2022",
-    "image": {
-      "src": "https://cdn.columbusunderground.com/wp-content/uploads/2017/06/comfest-2017-02.jpg",
-      "alt": "Columbus Pride Festival"
-    },
-    "details": "TLGYO.ORG will be attending the festival in an unofficial capicity. TLGYO.ORG volunteers will be providing literature and other helpful program information. Event signup for future events will be available, and TLGYO.ORG will be accepting donations, and other contributions while at this event. For more ianformation email us at hello@tlgyo.org."
+    "title": "Back2School Supply Drive (HAS ENDED)"
   }
-]
+}
