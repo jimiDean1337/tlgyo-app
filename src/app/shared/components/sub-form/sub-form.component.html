@@ -1,0 +1,15 @@
+<div>
+  {{title}}
+        <form #subscribeForm="ngForm">
+          <div class="form-group">
+            <input [(ngModel)]="subscriberModel.name" #subName="ngModel" type="text" class="form-control" name="subName" id="subName" aria-describedby="subName" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email" placeholder="Email">
+          </div>
+          <div class="d-flex align-items-end justify-content-start">
+            <span *ngIf="helpMsg" class="text-muted col-7">{{helpMsg}}</span>
+          <button type="button" class="col-4 btn btn-get-started float-end mt-2" (click)="addSubscriber(subscriberModel, subscribeForm)">SUBSCRIBE</button>
+          </div>
+        </form>
+</div>

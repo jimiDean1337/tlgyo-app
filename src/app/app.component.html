@@ -1,5 +1,5 @@
 <!-- ======= Hero Section ======= -->
-<section id="hero" #carouselContainer>
+<section *ngIf="showHero" id="hero" #carouselContainer>
   <div class="hero-container">
     <carousel [isAnimated]="true" id="heroCarousel" class="">
       <slide *ngFor="let slide of heroSlides; let i = index;">
@@ -28,12 +28,14 @@
     </div>
 
     <nav id="navbar" class="navbar">
-      <ul>
+      <ul *ngIf="showHero">
         <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
         <li><a class="nav-link scrollto" href="#about">About Us</a></li>
         <li><a class="nav-link scrollto" href="#programs">Programs</a></li>
         <li><a class="nav-link scrollto" href="#events">Events</a></li>
+        <li><a class="nav-link" routerLink="baked-sale" routerLinkActive="active">Baked Sale</a></li>
         <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
+        <li><a class="nav-link scrollto" href="#donors">Donors</a></li>
         <li><a class="nav-link scrollto" href="#team">Team</a></li>
         <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
@@ -55,6 +57,11 @@
         </li> -->
         <li><a class="nav-link getstarted scrollto" href="#donation">Donate</a></li>
       </ul>
+      <ul *ngIf="!showHero">
+        <li><a class="nav-link" routerLink="home" routerLinkActive="active">Home</a></li>
+        <li><a class="nav-link" routerLink="baked-sale" routerLinkActive="active">Baked Sale</a></li>
+        <li><a class="nav-link getstarted" href="https://checkout.square.site/merchant/MLVHAV28WTS90/checkout/R5G6HXPJET7AQ7JJJ3FUUKHB">Donate</a></li>
+      </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
     </nav><!-- .navbar -->
 
@@ -62,380 +69,7 @@
 </header><!-- End Header -->
 
 <main id="main">
-
-  <!-- ======= About Us Section ======= -->
-  <section id="about" class="about">
-    <div class="container">
-
-      <div class="section-title" data-aos="fade-up">
-        <h2>About Us</h2>
-        <p>TLGYO.ORG is a registered 501(c)3 non-profit organization, founded to help give any youth in need a bright future. Our main
-        purpose is to assist at-risk teenagers in achieving their full potential. We work to do this by providing them
-        with an opportunity to develop skills that will help them live healthier lives while developing the tools they need
-        to be productive and successful members of society.
-</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-6" data-aos="fade-up">
-          <img src="assets/img/about.jpg" class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-up">
-          <h3>TLGYO <strong>seeks to improve our children's futures by providing a secure and supportive atmosphere in which they may grow and
-          develop.</strong></h3>
-          <p class="fst-italic mb-1" data-aos="fade-up">
-            <i class="bi bi-quote" style="font-size: 1.5rem;"></i> Good habits formed at youth make all the difference<br>
-          </p>
-          <p data-aos="fade-up"><strong>-Aristotle</strong></p>
-          <p data-aos="fade-up">
-            As a relatively new organization, our current programs are in their early phases, and are growing every day. We are
-            always looking for individuals, groups, or businesses that are interested in donating funds, products, or their time to
-            this worthy cause.
-          </p>
-
-          <div class="skills-content" data-aos="fade-up">
-            <h2>Fundraisers, and Other Goals</h2>
-            <p>See progress of specific goals for donations, fundraisers.</p>
-            <div *ngFor="let goal of currentGoals; let i = index;" class="progress">
-              <span class="skill">{{goal?.title}} <i class="val">{{goal?.value}}/{{goal.target}}{{goal?.unit}}</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" [attr.aria-valuenow]="goal?.percentage" aria-valuemin="0" [attr.aria-valuemax]="goal?.target">
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End About Us Section -->
-
-  <!-- ======= Counts Section ======= -->
-  <section class="counts section-bg">
-    <div class="container">
-      <div class="row no-gutters">
-        <div *ngFor="let count of currentCounts; let i = index;" class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-          <div class="count-box" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
-            <i class="bi" [ngClass]="count.icon"></i>
-            <span [countUp]="count.count" [options]="countsOptions" class="purecounter">0</span>
-            <div [innerHTML]="count.details"></div>
-            <!-- <a href="#">Find out more &raquo;</a> -->
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Counts Section -->
-
-  <!-- ======= Our Programs Section ======= -->
-  <section id="programs" class="services">
-    <div class="container">
-
-      <div class="section-title">
-        <h2 data-aos="fade-up">Our Programs</h2>
-        <p data-aos="fade-up">TLGYO is involved in a variety of youth outreach services and programs that directly and indirectly benefit at-risk teens. Our growing organization has plans to increase the number of programs in the coming year.</p>
-      </div>
-
-      <div class="row">
-        <div *ngFor="let program of programList; let i = index;" class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" (click)="openProgramModal(programTemplate, i)" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
-          <div class="icon-box">
-            <div *ngIf="program.icon" class="icon"><i class="bx" [ngClass]="program.icon"></i></div>
-            <h4 class="title"><a href="javascript:void(0)">{{program.title}}</a></h4>
-            <p class="description">{{program.description}}</p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Our Programs Section -->
-
-  <!-- ======= Cta Section ======= -->
-  <section *ngIf="callToAction?.show" class="cta" [style.background-image]="'url(' + callToAction?.background + ')'">
-    <div class="container">
-
-      <div class="text-center" data-aos="fade-up">
-        <h3>{{callToAction?.title }}</h3>
-        <p> {{callToAction?.details}}
-        </p>
-        <a class="cta-btn" [ngClass]="callToAction?.button?.classes" [href]="callToAction?.button?.link">{{callToAction?.button?.text}}</a>
-      </div>
-
-    </div>
-  </section><!-- End Cta Section -->
-
-  <!-- ======= More Programs Section ======= -->
-  <section class="more-services section-bg">
-    <div class="container">
-      <div class="section-title"data-aos="fade-up">
-        <h2>Outreach In Action</h2>
-        <p>Follow the stories about TLGYO events, fundraisers, and the amazing people who are making an impact in the lives of youth. Find inspiration as well as information on how you can participate and make a genuine difference in the lives of at-risk 12 to 17 year olds.</p>
-      </div>
-      <div class="row">
-        <div *ngFor="let story of stories; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
-          <div class="card">
-            <img [src]="story.image.src" class="card-img-top" [alt]="story.image.alt">
-            <div class="card-body">
-              <h5 class="card-title"><a href="javascript:void(0)">{{story.title}}</a></h5>
-              <p class="card-text">{{story.description}}</p>
-              <button *ngIf="story.button" class="btn" [ngClass]="story.button.classes" (click)="openStoryModal(storyTemplate, i)">{{story?.button?.text}}</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End More Services Section -->
-
-   <!-- ======= Upcoming Events Section ======= -->
-   <section id="events" class="more-services section-bg">
-    <div class="container">
-      <div class="section-title"data-aos="fade-up">
-        <h2>TLGYO.ORG Events</h2>
-        <p>A list of TLGYO.ORG ongoing and upcoming events. For updates and event reminders be sure to subscribe to the TLGYO.ORG newsletter.</p>
-      </div>
-      <div class="row">
-        <h4 *ngIf="!events?.length" class="text-center">There are no upcoming events at this time. Please check back later.</h4>
-        <div *ngFor="let event of events; let i = index;" class="col-lg-4 col-md-6 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
-          <div class="card">
-            <img [src]="event.image.src" class="card-img-top" [alt]="event.image.alt">
-            <div class="card-body">
-              <h5 class="card-title"><a href="javascript:void(0)">{{event.title}}</a></h5>
-              <p>Date: {{event.date}}</p>
-              <p class="card-text">{{event.details}}</p>
-              <!-- <button data-aos="fade-up" *ngIf="event.button" class="btn" [ngClass]="event.button.classes" (click)="openStoryModal(storyTemplate, i)">{{story?.button?.text}}</button> -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Upcoming Events Section -->
-
-  <!-- ======= Info Box Section ======= -->
-  <section id="faq" class="info-box py-0">
-    <div class="container-fluid">
-
-      <div class="row">
-
-        <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
-          <div class="content" data-aos="fade-up">
-            <h3>Have a question? <strong>Take a look at our FAQ list</strong></h3>
-            <p>
-              TLGYO has compiled a list of some frequently asked questions. In it you will find useful links, important resources, as well information about our programs, and how to contribute to helping at-risk youth.
-            </p>
-          </div>
-
-          <div class="accordion-list">
-            <ul>
-              <li *ngFor="let q of faqList; let i = index;" data-aos="fade-up" [attr.data-aos-delay]="i * 250">
-                <a class="collapse" (click)="openSelectedFAQ(i)" [attr.aria-expanded]="selectedFAQId == i" aria-controls="collapseBasic"><span>{{q.id}}</span> {{q.title}} <i class="bx bx-chevron-down icon-show"></i><i
-                    class="bx bx-chevron-up icon-close"></i></a>
-                <div [id]="'faqListItem' + i" [collapse]="selectedFAQId != i" [isAnimated]="true" class="collapse" [innerHTML]="q.body">
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-
-        <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-          style="background-image: url(assets/img/info-box.jpg);" data-aos="fade-up">&nbsp;</div>
-      </div>
-
-    </div>
-  </section><!-- End Info Box Section -->
-
-  <!-- ======= Donation Section ======= -->
-  <section id="donation" class="donation section-bg">
-    <div class="container">
-
-      <div class="section-title" data-aos="fade-up">
-        <h2>Donate and make a direct impact</h2>
-        <p>Giving even a small amount goes a long way. Your entire donation is allocated to enable TLGYO programs and services, to the benefit of teenagers in need of help. Your contribution could get supplies for teachers to improve their students educational experiences, or shipping costs to deliver Christmas stockings to children who would otherwise see very little, or nothing at all, this holiday season. Donate today and help us make a difference. All donations to TLGYO.ORG are tax deductible.</p>
-        <p>Tax Id: <b>{{contactInfo?.taxId}}</b></p>
-      </div>
-
-      <div class="row justify-content-center mb-5" data-aos="fade-up">
-        <a href="https://checkout.square.site/merchant/MLVHAV28WTS90/checkout/R5G6HXPJET7AQ7JJJ3FUUKHB" target="_blank" class="col-lg-3 col-md-6 btn btn-primary" style="max-width: 60vw;">Make a donation</a>
-      </div>
-      <div class="row donation-container">
-        <div class="card col-lg-6 offset-lg-3 col-12" data-aos="fade-up">
-          <div class="card-body">
-            <h5 class="card-title">Financial Donations Allocated</h5>
-            <ul class="list-group">
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Programs
-                <span class="badge bg-primary rounded-pill">40%</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Services
-                <span class="badge bg-primary rounded-pill">40%</span>
-              </li>
-              <li class="list-group-item d-flex justify-content-between align-items-center">
-                Administrative
-                <span class="badge bg-primary rounded-pill">10%</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-
-      </div>
-
-    </div>
-  </section>
-  <!-- End Donation Section -->
-
-  <!-- ======= Donors Section ======= -->
-  <section id="donors" class="donors section-bg">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Donor Recognition</h2>
-      <p>A sincere thank you to these donors whose contributions have allowed TLGYO.ORG to continue helping teenagers get every opportunity they deserve.</p>
-    </div>
-    <div class="container">
-      <div class="row donators-container justify-content-start mb-5">
-        <div *ngFor="let item of donators; let i = index;" class="col-md-3 my-1" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
-          <div class="card">
-            <div class="card-body"><h3 class="text-center"><i class="bx bx-donate-heart text-primary"></i>&nbsp;<b>{{item.name}}</b></h3></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Donors Section -->
-
-  <!-- ======= Our Team Section ======= -->
-  <section id="team" class="team">
-    <div class="container">
-
-      <div class="section-title" data-aos="fade-up">
-        <h2>Our Team</h2>
-        <p>Change can begin with one person. And that is how TLGYO came to exist. Our founder made the decision to stand up and push back in support of teenagers that may not have anyone looking out for their well-being, let alone thinking about their future. Momentum has increased, and with growing resources, Tashia Cardec has created an organization that fulfills a promise to rescue at-risk teenagers from the pain, and loss that is the direct result of abuse, addiction, and a lack of positive reinforcement and support. With every contribution from supporters like you, TLGYO increases the chance of a brighter future for more, and more youth.</p>
-      </div>
-
-      <div class="row justify-content-center">
-
-        <div *ngFor="let member of teamList; let i = index;" class="col-xl-3 col-lg-4 col-md-6" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
-          <div class="member">
-            <img [src]="member.image.src" class="img-fluid" [alt]="member.image.alt">
-            <div class="member-info">
-              <div class="member-info-content">
-                <h4>{{member.name}}</h4>
-                <span>{{member.title}}</span>
-              </div>
-              <div class="social">
-                <a *ngFor="let link of member.socials; let i = index;" [href]="link.href"><i class="bi" [ngClass]="link.icon"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section><!-- End Our Team Section -->
-
-  <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="testimonials section-bg">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Testimonials</h2>
-      <p>Experiences shared by those who have been helped or impacted by what TLGYO.ORG does for at risk youth.</p>
-    </div>
-    <div class="container">
-      <div class="row justify-content-center mb-5">
-        <div *ngFor="let item of testimonials; let i = index;" class="col-md-6 my-1" data-aos="fade-up" [attr.data-aos-delay]="i * 150">
-          <div class="card" style="min-height: 400px;">
-            <div class="card-body">
-              <h3 class="text-center">{{item.name}}</h3>
-              <h5 class="text-center">{{item.title}}</h5>
-              <hr>
-              <div class="px-3" [innerHTML]="item.html"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======= Contact Us Section ======= -->
-  <section id="contact" class="contact section-bg">
-
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Contact Us</h2>
-        <p>TLGYO is always looking for ways to contribute to local, and national communities utilizing our youth outreach programs and services. If you have an opportunity, idea, question, or comment, please don't hesitate to send us a message. We appreciate any feed-back or information you provide.</p>
-      </div>
-    </div>
-
-    <div class="container-fluid">
-
-      <div class="row">
-
-        <div class="col-lg-6 d-flex align-items-stretch infos">
-
-          <div class="row">
-
-            <div class="col-lg-6 info d-flex flex-column align-items-stretch">
-              <i class="bx bx-map"></i>
-              <h4>Location</h4>
-              <p>{{contactInfo?.address?.full}}</p>
-            </div>
-            <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
-              <i class="bx bx-phone"></i>
-              <h4>Call Us</h4>
-              <p>+1 {{contactInfo?.phone}}</p>
-            </div>
-            <div class="col-lg-6 info info-bg d-flex flex-column align-items-stretch">
-              <i class="bx bx-envelope"></i>
-              <h4>Email Us</h4>
-              <p>{{contactInfo?.email}}</p>
-            </div>
-            <div class="col-lg-6 info d-flex flex-column align-items-stretch">
-              <i class="bx bx-time-five"></i>
-              <h4>Working Hours</h4>
-              <p>{{contactInfo?.business_hours}}</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-lg-6 d-flex align-items-stretch contact-form-wrap">
-          <form #contactForm="ngForm" name="contactForm" role="form" class="php-email-form">
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label for="name">Your Name</label>
-                <input [(ngModel)]="contactModel.name" #contactName="ngModel" type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <label for="email">Your Email</label>
-                <input [(ngModel)]="contactModel.email" #contactEmail="ngModel" type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-              </div>
-            </div>
-            <div class="form-group mt-3">
-              <label for="subject">Subject</label>
-              <input [(ngModel)]="contactModel.subject" #contactSubject="ngModel" type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group mt-3">
-              <label for="message">Message</label>
-              <textarea [(ngModel)]="contactModel.msg" #contactMsg="ngModel" class="form-control" name="message" rows="8" required></textarea>
-            </div>
-            <!-- <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div> -->
-            <div class="text-center mt-3"><button type="button" (click)="addContact(contactModel, contactForm)" [disabled]="contactForm?.errors?.invalid">Send Message</button></div>
-          </form>
-        </div>
-
-      </div>
-
-    </div>
-  </section><!-- End Contact Us Section -->
-
+  <router-outlet></router-outlet>
 </main><!-- End #main -->
 
 <!-- ======= Footer ======= -->
@@ -486,18 +120,7 @@
         <div class="col-lg-4 col-md-6 footer-newsletter">
           <h4>Our Newsletter</h4>
           <p>Subscribe to get the TLGYO.ORG monthly newsletter. Receive organization updates, upcomging events, and other relavent information.</p>
-          <form #subscribeForm="ngForm">
-            <div class="form-group">
-              <input [(ngModel)]="subscriberModel.name" #subName="ngModel" type="text" class="form-control" name="subName"
-                id="subName" aria-describedby="subName" placeholder="Name">
-            </div>
-            <div class="form-group mt-1">
-              <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email"
-                placeholder="Email">
-            </div>
-            <button type="button" class="btn float-end mt-2"
-              (click)="addSubscriber(subscriberModel, subscribeForm)">SUBSCRIBE</button>
-          </form>
+          <tlgyo-sub-form></tlgyo-sub-form>
         </div>
 
       </div>
@@ -533,55 +156,11 @@
         </button>
       </div>
       <div class="modal-body">
-        Subscribe to get updates on TLGYO.ORG news, upcoming events, fundraisers, volunteer oportunities, and much more. Direct to your inbox, once a month. 100% Spam-free.
-        <form #subscribeForm="ngForm">
-          <div class="form-group">
-            <input [(ngModel)]="subscriberModel.name" #subName="ngModel" type="text" class="form-control" name="subName" id="subName" aria-describedby="subName" placeholder="Name">
-          </div>
-          <div class="form-group">
-            <input [(ngModel)]="subscriberModel.email" #email="ngModel" type="email" class="form-control" name="email" placeholder="Email">
-          </div>
-          <div class="d-flex align-items-end justify-content-start">
-            <span class="text-muted col-7">We won't share your data</span>
-          <button type="button" class="col-4 btn btn-get-started float-end mt-2" (click)="addSubscriber(subscriberModel, subscribeForm); hideNewsletterModal();">SUBSCRIBE</button>
-          </div>
-        </form>
+        <tlgyo-sub-form [helpMsg]="'We won\'t share your data'" [title]="'Subscribe to get updates on TLGYO.ORG news, upcoming events, fundraisers, volunteer oportunities, and much more. Direct to your inbox, once a month. 100% Spam-free.'"></tlgyo-sub-form>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Program Modal -->
-<ng-template #programTemplate>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">{{selectedProgram?.title}}</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div [innerHTML]="selectedProgram?.body"></div>
-  </div>
-  <div class="modal-footer">
-    <a [href]="selectedProgram.link" target="_blank" class="btn btn-primary float-end" (click)="modalRef?.hide()">Learn more</a>
-  </div>
-</ng-template>
-
-<!-- Story Modal -->
-<ng-template #storyTemplate>
-  <div class="modal-header">
-    <h4 class="modal-title pull-left">{{selectedStory?.title}}</h4>
-    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-      <span aria-hidden="true" class="visually-hidden">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <div [innerHTML]="selectedStory?.story?.body"></div>
-  </div>
-  <div class="modal-footer">
-    <a [href]="selectedStory.story.button.link" class="btn btn-primary float-end" (click)="modalRef?.hide()">{{selectedStory.story.button.text}}</a>
-  </div>
-</ng-template>
 
 <alert [isOpen]="alertConfig.show" [dismissOnTimeout]="alertConfig.timeout" [type]="alertConfig.type" [dismissible]="true">{{ alertConfig.msg }}</alert>
 

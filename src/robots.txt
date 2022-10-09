@@ -1,1 +1,3 @@
 User-agent: *
+/
+/baked-sale
