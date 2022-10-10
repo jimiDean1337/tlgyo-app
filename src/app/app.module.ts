@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { AlertModule } from 'ngx-bootstrap/alert';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import {TooltipModule} from 'ngx-bootstrap/tooltip';
+import {PopoverModule} from 'ngx-bootstrap/popover';
 // import { AccordionModule } from 'ngx-bootstrap/accordion';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { CountUpModule } from 'ngx-countup';
@@ -31,6 +33,8 @@ import { AppRoutingModule } from './app-routing.module';
     FormsModule,
     BrowserAnimationsModule,
     AlertModule.forRoot(),
+    TooltipModule.forRoot(),
+    PopoverModule.forRoot(),
     ModalModule.forRoot(),
     CollapseModule.forRoot(),
     CarouselModule.forRoot(),

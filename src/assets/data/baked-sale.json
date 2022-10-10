@@ -1,0 +1,134 @@
+[
+  {
+    "title": "Pumpkin Roll - Half",
+    "description": "Half of a delicous pumpkin roll",
+    "price": 7.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/pumpkin-roll-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "Pumpkin Roll - Whole",
+    "description": "The whole tasty pumpkin roll",
+    "price": 12.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/pumpkin-roll-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "9\" Pumpkin Pie",
+    "description": "A classic pumpkin pie",
+    "price": 10.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/pumpkin-pie-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "9\" Apple Pie",
+    "description": "A classic apple pie",
+    "price": 10.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/apple-pie-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "9\" Dutch Apple Pie",
+    "description": "All the goodness of a classic apple pie with delicious crumbs",
+    "price": 12.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/dutch-apple-pie-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "Baker's Dozen Chocolate No-Bake Cookies",
+    "description": "These chocolate cookies have never seen an oven",
+    "price": 10.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/chocolate-no-bake-cookies-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "Baker's Dozen Peanut Butter No-Bake Cookies",
+    "description": "Creamy peanut butter cookies without the bake",
+    "price": 10.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/peanut-butter-no-bake-cookies-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "1LB Chocolate Fudge",
+    "description": "A perfect, chocolatey treat for anyone",
+    "price": 9.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/chocolate-fudge-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "1LB Peanut Butter Fudge",
+    "description": "Rich, creamy and delicious",
+    "price": 9.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/peanut-butter-fudge-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "Baker's Dozen Chocolate Chip Cookies",
+    "description": "A classic that never gets old",
+    "price": 9.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/chocolate-chip-cookies-01.jpg",
+      "classes": ""
+    }
+  },
+  {
+    "title": "Baker's Pumpkin Cookies w/ Cream Cheese Frosting",
+    "description": "A perfect addition to this Autumn season",
+    "price": 9.00,
+    "quantity": 0,
+    "available": true,
+    "img": {
+      "alt": "",
+      "src": "baked-sale/pumpkin-cookies-01.jpg",
+      "classes": ""
+    }
+  }
+]

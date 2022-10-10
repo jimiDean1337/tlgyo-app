@@ -1,0 +1,1 @@
+<alert [isOpen]="alertConfig.show" [dismissOnTimeout]="alertConfig.timeout" [type]="alertConfig.type" [dismissible]="true" (onClosed)="alertClosed()" [ngClass]="'alert-' + alertConfig.type">{{ alertConfig.msg }}</alert>
